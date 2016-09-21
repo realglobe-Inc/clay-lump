@@ -28,25 +28,32 @@ describe('clay-lump', function () {
       let dogs = lump01.sheet('dogs')
       assert.ok(dogs)
 
-      yield dogs.set('john', { type: 'Saint Bernard', age: 3 })
-      let john = yield dogs.get('john')
-      assert.deepEqual(john, { type: 'Saint Bernard', age: 3 })
+      yield dogs.set('John', { type: 'Saint Bernard', age: 3 })
+      let John = yield dogs.get('John')
+      assert.deepEqual(John, { type: 'Saint Bernard', age: 3 })
 
       let keys = yield dogs.keys()
-      assert.deepEqual(keys, [ 'john' ])
+      assert.deepEqual(keys, [ 'John' ])
 
       let all = yield dogs.all()
       assert.deepEqual(all, [ { type: 'Saint Bernard', age: 3 } ])
+
+      yield dogs.set('Vicky', { type: 'Chihuahua', age: 1 })
     }
     {
       let dogs = lump02.sheet('dogs')
-      yield dogs.set('bess', { type: 'Chihuahua', age: 1 })
+      yield dogs.set('Vicky', { type: 'Chihuahua', age: 2 })
 
       let description = yield lump02.describe()
       assert.deepEqual(description.sheets, { shared: [ 'dogs' ] })
     }
 
     yield lump02.sync(lump01)
+    {
+      let dogs = lump01.sheet('dogs')
+      let Vicky = yield dogs.get('Vicky')
+      assert.equal(Vicky.age, 2) // Updated from lump02
+    }
 
     yield lump01.close()
     yield lump02.close()
