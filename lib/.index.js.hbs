@@ -1,0 +1,18 @@
+/**
+ * {{pkg.description}}
+ * @module {{pkg.name}}
+ * @version {{pkg.version}}
+ */
+
+'use strict'
+
+const ClayLump = require('./sugo_hub')
+const create = require('./create')
+
+let lib = create.bind(this)
+
+Object.assign(lib, ClayLump, {
+  ClayLump
+})
+
+module.exports = lib
