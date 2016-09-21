@@ -25,6 +25,7 @@
   "dependencies": {
     "abind": "^1.0.0",
     "co": "^4.6.0",
+    "debug": "^2.2.0",
     "install": "^0.8.1",
     "json-pointer": "^0.5.0"
   },

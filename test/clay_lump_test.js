@@ -32,6 +32,11 @@ describe('clay-lump', function () {
       let john = yield dogs.get('john')
       assert.deepEqual(john, { type: 'Saint Bernard', age: 3 })
 
+      let keys = yield dogs.keys()
+      assert.deepEqual(keys, [ 'john' ])
+
+      let all = yield dogs.all()
+      assert.deepEqual(all, [ { type: 'Saint Bernard', age: 3 } ])
     }
     {
       let dogs = lump02.sheet('dogs')
