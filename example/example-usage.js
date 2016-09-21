@@ -2,6 +2,7 @@
 
 const clayLump = require('clay-lump')
 const co = require('co')
+const asleep = require('asleep')
 
 co(function * () {
   let lump01 = clayLump()
@@ -13,6 +14,8 @@ co(function * () {
     let john = yield dogs.get('john')
     console.log(john) // -> { type: 'Saint Bernard', age: 3 }
   }
+
+  yield asleep(10)
 
   let lump02 = clayLump()
   {

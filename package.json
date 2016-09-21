@@ -40,6 +40,7 @@
     "ape-tasking": "^4.0.9",
     "ape-tmpl": "^5.0.19",
     "ape-updating": "^4.0.5",
+    "asleep": "^1.0.3",
     "coz": "^6.0.20",
     "filecopy": "^2.1.2",
     "injectmock": "^2.0.0",

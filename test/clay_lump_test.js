@@ -6,6 +6,7 @@
 
 const ClayLump = require('../lib/clay_lump.js')
 const assert = require('assert')
+const asleep = require('asleep')
 const co = require('co')
 
 describe('clay-lump', function () {
@@ -40,6 +41,8 @@ describe('clay-lump', function () {
 
       yield dogs.set('Vicky', { type: 'Chihuahua', age: 1 })
     }
+
+    yield asleep(10)
     {
       let dogs = lump02.sheet('dogs')
       yield dogs.set('Vicky', { type: 'Chihuahua', age: 2 })
