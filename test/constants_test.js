@@ -1,14 +1,14 @@
 /**
- * Test case for memoryDriver.
+ * Test case for constants.
  * Runs with mocha.
  */
 'use strict'
 
-const memoryDriver = require('../lib/drivers/memory_driver.js')
+const constants = require('../lib/constants.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('memory-driver', function () {
+describe('constants', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,7 +19,7 @@ describe('memory-driver', function () {
 
   }))
 
-  it('Memory driver', () => co(function * () {
+  it('Constants', () => co(function * () {
 
   }))
 })
