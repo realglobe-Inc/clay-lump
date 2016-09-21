@@ -12,17 +12,6 @@ describe('clay-lump', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
-    let lump = new ClayLump()
-    yield lump.open()
-    {
-      let hoge = lump.sheet('hoge')
-      assert.ok(hoge)
-
-      yield hoge.set('foo', 'This is foo')
-      let foo = yield hoge.get('foo')
-      assert.equal(foo, 'This is foo')
-    }
-    yield lump.close()
   }))
 
   after(() => co(function * () {
@@ -30,7 +19,32 @@ describe('clay-lump', function () {
   }))
 
   it('Clay lump', () => co(function * () {
+    let lump01 = new ClayLump()
+    let lump02 = new ClayLump()
+    yield lump01.open()
+    yield lump02.open()
 
+    {
+      let dogs = lump01.sheet('dogs')
+      assert.ok(dogs)
+
+      yield dogs.set('john', { type: 'Saint Bernard', age: 3 })
+      let john = yield dogs.get('john')
+      assert.deepEqual(john, { type: 'Saint Bernard', age: 3 })
+
+    }
+    {
+      let dogs = lump02.sheet('dogs')
+      yield dogs.set('bess', { type: 'Chihuahua', age: 1 })
+
+      let description = yield lump02.describe()
+      assert.deepEqual(description.sheets, { shared: [ 'dogs' ] })
+    }
+
+    yield lump02.sync(lump01)
+
+    yield lump01.close()
+    yield lump02.close()
   }))
 })
 
