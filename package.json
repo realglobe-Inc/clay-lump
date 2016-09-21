@@ -40,7 +40,8 @@
     "ape-tmpl": "^5.0.19",
     "ape-updating": "^4.0.5",
     "coz": "^6.0.20",
-    "injectmock": "^2.0.0"
+    "injectmock": "^2.0.0",
+    "sg-travis": "^1.1.33"
   },
   "engines": {
     "node": ">=6",
