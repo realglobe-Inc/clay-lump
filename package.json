@@ -1,6 +1,6 @@
 {
   "name": "clay-lump",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lump of clay-db",
   "main": "lib",
   "browser": "ci/browser",
