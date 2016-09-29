@@ -48,7 +48,7 @@ describe('clay-lump', function () {
       yield dogs.set('Vicky', { type: 'Chihuahua', age: 2 })
 
       let description = yield lump02.describe()
-      assert.deepEqual(description.sheets, { shared: [ 'dogs' ] })
+      assert.deepEqual(description.sheets, { shared: [ 'dogs' ], private: [ '$$config' ] })
     }
 
     yield lump02.sync(lump01)

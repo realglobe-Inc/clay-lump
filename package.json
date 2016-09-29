@@ -24,8 +24,8 @@
   "homepage": "https://github.com/realglobe-Inc/clay-lump#readme",
   "dependencies": {
     "abind": "^1.0.0",
-    "clay-constants": "^0.3.4",
-    "clay-crypto": "^1.0.1",
+    "clay-constants": "^0.3.7",
+    "clay-crypto": "^1.0.4",
     "clay-driver-memory": "^1.0.1",
     "co": "^4.6.0",
     "debug": "^2.2.0",
