@@ -6,7 +6,7 @@ Lump of clay-db
   + [create(kind, sheetName, config)](#clay-lump-function-create)
   + [isLump(instance)](#clay-lump-function-is-lump)
 + [ClayLump](clay-lump-classes) Class
-  + [new ClayLump()](#clay-lump-classes-clay-lump-constructor)
+  + [new ClayLump(config)](#clay-lump-classes-clay-lump-constructor)
   + [lump.sync(lump)](#clay-lump-classes-clay-lump-sync)
   + [lump.describe()](#clay-lump-classes-clay-lump-describe)
   + [lump.open()](#clay-lump-classes-clay-lump-open)
@@ -43,22 +43,26 @@ Check if an instance is a lump
 
 ## ClayLump Class
 
-
+Local key value storage of Clay DB.
 
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-constructor" ></a>
 
-### new ClayLump()
+### new ClayLump(config)
 
 Constructor of ClayLump class
 
+| Param | Type | Description |
+| ----- | --- | -------- |
+| config | Object | Lump configuration |
+| config.driver | ClayDriver | Driver instance |
 
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-sync" ></a>
 
 ### lump.sync(lump) -> `Promise`
 
-Sync with another lump
+Sync with another lump. Both of lumps will be updated
 
 | Param | Type | Description |
 | ----- | --- | -------- |
@@ -69,19 +73,19 @@ Sync with another lump
 
 ### lump.describe() -> `Promise`
 
-Describe thi lump
+Describe this lump
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-open" ></a>
 
 ### lump.open() -> `Promise`
 
-Open lump
+Open this lump.
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-close" ></a>
 
 ### lump.close() -> `Promise`
 
-Close lump
+Close this lump.
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-keyPair" ></a>
 

@@ -9,8 +9,25 @@
       "fires": "",
       "constructor": {
         "name": "ClayLump",
-        "description": "",
-        "parameters": [],
+        "description": "Local key value storage of Clay DB.",
+        "parameters": [
+          {
+            "name": "config",
+            "type": "Object",
+            "description": "Lump configuration",
+            "default": "",
+            "optional": "",
+            "nullable": ""
+          },
+          {
+            "name": "config.driver",
+            "type": "ClayDriver",
+            "description": "Driver instance",
+            "default": "",
+            "optional": "",
+            "nullable": ""
+          }
+        ],
         "examples": []
       },
       "functions": [
@@ -18,7 +35,7 @@
           "name": "sync",
           "access": "",
           "virtual": false,
-          "description": "Sync with another lump",
+          "description": "Sync with another lump. Both of lumps will be updated",
           "parameters": [
             {
               "name": "lump",
@@ -39,7 +56,7 @@
           "name": "describe",
           "access": "",
           "virtual": false,
-          "description": "Describe thi lump",
+          "description": "Describe this lump",
           "parameters": [],
           "examples": [],
           "returns": {
@@ -51,7 +68,7 @@
           "name": "open",
           "access": "",
           "virtual": false,
-          "description": "Open lump",
+          "description": "Open this lump.",
           "parameters": [],
           "examples": [],
           "returns": {
@@ -63,7 +80,7 @@
           "name": "close",
           "access": "",
           "virtual": false,
-          "description": "Close lump",
+          "description": "Close this lump.",
           "parameters": [],
           "examples": [],
           "returns": {
