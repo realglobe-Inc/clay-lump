@@ -1,0 +1,1021 @@
+{
+  "classes": [
+    {
+      "name": "ClayLump",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "ClayLump",
+        "description": "",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "sync",
+          "access": "",
+          "virtual": false,
+          "description": "Sync with another lump",
+          "parameters": [
+            {
+              "name": "lump",
+              "type": "Object",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "describe",
+          "access": "",
+          "virtual": false,
+          "description": "Describe thi lump",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "open",
+          "access": "",
+          "virtual": false,
+          "description": "Open lump",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "close",
+          "access": "",
+          "virtual": false,
+          "description": "Close lump",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "keyPair",
+          "access": "",
+          "virtual": false,
+          "description": "Key pair of this lump.\nGenerate new one If not exists",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "PrivateSheet",
+      "description": "",
+      "extends": [
+        "Sheet"
+      ],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "PrivateSheet",
+        "description": "Private sheet",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "get",
+          "access": "",
+          "virtual": false,
+          "description": "Get value from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "getAll",
+          "access": "",
+          "virtual": false,
+          "description": "Get values with multiple keys",
+          "parameters": [
+            {
+              "name": "keys",
+              "type": "Array.<string>",
+              "description": "Keys to get",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": "- Composed values"
+          }
+        },
+        {
+          "name": "has",
+          "access": "",
+          "virtual": false,
+          "description": "Has value with key",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Boolean>",
+            "description": ""
+          }
+        },
+        {
+          "name": "set",
+          "access": "",
+          "virtual": false,
+          "description": "Set value to sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "Key to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "value",
+              "type": "*",
+              "description": "Value to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "setAll",
+          "access": "",
+          "virtual": false,
+          "description": "Set multiple values",
+          "parameters": [
+            {
+              "name": "keyValues",
+              "type": "Object",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": ""
+          }
+        },
+        {
+          "name": "del",
+          "access": "",
+          "virtual": false,
+          "description": "Delete from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "keys",
+          "access": "",
+          "virtual": false,
+          "description": "Get keys",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "all",
+          "access": "",
+          "virtual": false,
+          "description": "All values",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "iterator",
+          "access": "",
+          "virtual": false,
+          "description": "Get value iterator",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "- An iterator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SharedSheet",
+      "description": "",
+      "extends": [
+        "Sheet"
+      ],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "SharedSheet",
+        "description": "Shared sheet",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "get",
+          "access": "",
+          "virtual": false,
+          "description": "Get value from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "getAll",
+          "access": "",
+          "virtual": false,
+          "description": "Get values with multiple keys",
+          "parameters": [
+            {
+              "name": "keys",
+              "type": "Array.<string>",
+              "description": "Keys to get",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": "- Composed values"
+          }
+        },
+        {
+          "name": "has",
+          "access": "",
+          "virtual": false,
+          "description": "Has value with key",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Boolean>",
+            "description": ""
+          }
+        },
+        {
+          "name": "set",
+          "access": "",
+          "virtual": false,
+          "description": "Set value to sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "Key to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "value",
+              "type": "*",
+              "description": "Value to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "setAll",
+          "access": "",
+          "virtual": false,
+          "description": "Set multiple values",
+          "parameters": [
+            {
+              "name": "keyValues",
+              "type": "Object",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": ""
+          }
+        },
+        {
+          "name": "del",
+          "access": "",
+          "virtual": false,
+          "description": "Delete from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "keys",
+          "access": "",
+          "virtual": false,
+          "description": "Get keys",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "all",
+          "access": "",
+          "virtual": false,
+          "description": "All values",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "iterator",
+          "access": "",
+          "virtual": false,
+          "description": "Get value iterator",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "- An iterator"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sheet",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "Sheet",
+        "description": "Basic sheet class",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "get",
+          "access": "",
+          "virtual": false,
+          "description": "Get value from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "getAll",
+          "access": "",
+          "virtual": false,
+          "description": "Get values with multiple keys",
+          "parameters": [
+            {
+              "name": "keys",
+              "type": "Array.<string>",
+              "description": "Keys to get",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": "- Composed values"
+          }
+        },
+        {
+          "name": "has",
+          "access": "",
+          "virtual": false,
+          "description": "Has value with key",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Boolean>",
+            "description": ""
+          }
+        },
+        {
+          "name": "set",
+          "access": "",
+          "virtual": false,
+          "description": "Set value to sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "string",
+              "description": "Key to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "value",
+              "type": "*",
+              "description": "Value to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "setAll",
+          "access": "",
+          "virtual": false,
+          "description": "Set multiple values",
+          "parameters": [
+            {
+              "name": "keyValues",
+              "type": "Object",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Object>",
+            "description": ""
+          }
+        },
+        {
+          "name": "del",
+          "access": "",
+          "virtual": false,
+          "description": "Delete from sheet",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "keys",
+          "access": "",
+          "virtual": false,
+          "description": "Get keys",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "all",
+          "access": "",
+          "virtual": false,
+          "description": "All values",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<String>>",
+            "description": ""
+          }
+        },
+        {
+          "name": "iterator",
+          "access": "",
+          "virtual": false,
+          "description": "Get value iterator",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "- An iterator"
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "clayLump",
+      "access": "",
+      "virtual": false,
+      "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
+      "parameters": [],
+      "examples": [
+        "co(function * () {\n  let lump = clayLump({\n  // Options here\n  })\n  yield lump.open()\n}).catch((err) => console.error(err))"
+      ],
+      "returns": {
+        "type": "ClayLump",
+        "description": "- A ClayLump instance"
+      }
+    },
+    {
+      "name": "isLump",
+      "access": "",
+      "virtual": false,
+      "description": "Check if an instance is a lump",
+      "parameters": [
+        {
+          "name": "instance",
+          "type": "*",
+          "description": "Instance to check",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Boolean",
+        "description": "- Lump or not"
+      }
+    },
+    {
+      "name": "mixAll",
+      "access": "",
+      "virtual": false,
+      "description": "Mix multiple mixins",
+      "parameters": [
+        {
+          "name": "baseClass",
+          "type": "function",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "mixins",
+          "type": "Array.<function()>",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "function",
+        "description": "- Mixed class"
+      }
+    },
+    {
+      "name": "mergeLumps",
+      "access": "",
+      "virtual": false,
+      "description": "Merge lumps",
+      "parameters": [
+        {
+          "name": "target",
+          "type": "ClayLump",
+          "description": "Lump which will be changed",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "sources",
+          "type": "ClayLump",
+          "description": "Source lumps to merge with",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Promise",
+        "description": ""
+      }
+    },
+    {
+      "name": "mergeSheets",
+      "access": "",
+      "virtual": false,
+      "description": "Merge lump sheets",
+      "parameters": [
+        {
+          "name": "target",
+          "type": "ClayLump",
+          "description": "Lump sheet which will be changed",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "sources",
+          "type": "ClayLump",
+          "description": "Source lump sheets to merge with",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Promise",
+        "description": ""
+      }
+    },
+    {
+      "name": "assertMix",
+      "access": "",
+      "virtual": false,
+      "description": "Define mixin for assert.",
+      "parameters": [
+        {
+          "name": "baseClass",
+          "type": "function",
+          "description": "Base class to mix",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "function",
+        "description": "- Defined class"
+      }
+    },
+    {
+      "name": "assertOpen",
+      "access": "",
+      "virtual": false,
+      "description": "Ensure open",
+      "parameters": [],
+      "examples": []
+    },
+    {
+      "name": "assertNotOpen",
+      "access": "",
+      "virtual": false,
+      "description": "Ensure not open",
+      "parameters": [],
+      "examples": []
+    },
+    {
+      "name": "sheetMix",
+      "access": "",
+      "virtual": false,
+      "description": "Define mixin for sheet.",
+      "parameters": [
+        {
+          "name": "baseClass",
+          "type": "function",
+          "description": "Base class to mix",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "function",
+        "description": "- Defined class"
+      }
+    },
+    {
+      "name": "sheet",
+      "access": "",
+      "virtual": false,
+      "description": "Access to lump shared sheet",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "description": "Optional settings",
+          "default": "{}",
+          "optional": true,
+          "nullable": ""
+        },
+        {
+          "name": "options.kind",
+          "type": "string",
+          "description": "Sheet kind",
+          "default": "'shared'",
+          "optional": true,
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Sheet",
+        "description": ""
+      }
+    },
+    {
+      "name": "privateSheet",
+      "access": "",
+      "virtual": false,
+      "description": "Access to config sheet",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "PrivateSheet",
+        "description": ""
+      }
+    },
+    {
+      "name": "configSheet",
+      "access": "",
+      "virtual": false,
+      "description": "Access to config sheet",
+      "parameters": [],
+      "examples": [],
+      "returns": {
+        "type": "PrivateSheet",
+        "description": ""
+      }
+    },
+    {
+      "name": "create",
+      "access": "",
+      "virtual": false,
+      "description": "Create a new sheet",
+      "parameters": [
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "config",
+          "type": "object",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Sheet",
+        "description": ""
+      }
+    }
+  ]
+}

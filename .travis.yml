@@ -6,6 +6,7 @@ before_install:
 - curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
 - cat $HOME/.npmrc
 install:
+- npm install -g jsdoc mocha
 - npm install
 script:
 - ./ci/build.js
