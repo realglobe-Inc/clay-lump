@@ -10,7 +10,7 @@
   },
   "repository": "realglobe-Inc/clay-lump",
   "keywords": [
-    "claydb"
+    "ClayDB"
   ],
   "author": {
     "name": "Taka Okunishi",
@@ -24,21 +24,21 @@
   "homepage": "https://github.com/realglobe-Inc/clay-lump#readme",
   "dependencies": {
     "abind": "^1.0.0",
-    "clay-constants": "^0.2.0",
-    "clay-driver-memory": "^1.0.0",
+    "clay-constants": "^0.3.7",
+    "clay-driver-memory": "^1.2.0",
     "co": "^4.6.0",
-    "debug": "^2.2.0",
-    "json-pointer": "^0.5.0"
+    "debug": "^2.3.2",
+    "json-pointer": "^0.6.0"
   },
   "devDependencies": {
-    "ababel": "^1.1.10",
+    "ababel": "^1.1.12",
     "ababel-es2015": "^1.0.8",
-    "amocha": "^1.0.15",
+    "amocha": "^1.0.16",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^5.0.19",
+    "ape-tmpl": "^5.0.20",
     "ape-updating": "^4.0.5",
     "asleep": "^1.0.3",
     "coz": "^6.0.20",
