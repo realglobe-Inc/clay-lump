@@ -6,13 +6,15 @@
 
 'use strict'
 
-const ClayLump = require('./sugo_hub')
+const ClayLump = require('./clay_lump')
+const isLump = require('./is_lump')
 const create = require('./create')
 
 let lib = create.bind(this)
 
 Object.assign(lib, ClayLump, {
-  ClayLump
+  ClayLump,
+  isLump
 })
 
 module.exports = lib

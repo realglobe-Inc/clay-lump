@@ -1,12 +1,12 @@
 {
   "name": "clay-lump",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "Lump of clay-db",
   "main": "lib",
   "browser": "ci/browser",
   "scripts": {
     "test": "node ./ci/test.js",
-    "prepublish": "node ./ci/build.js && node ./ci/shim.js"
+    "prepublish": "node ./ci/build.js && node ./ci/shim.js && node ./ci/doc.js"
   },
   "repository": "realglobe-Inc/clay-lump",
   "keywords": [
@@ -25,10 +25,12 @@
   "dependencies": {
     "abind": "^1.0.0",
     "clay-constants": "^0.3.7",
+    "clay-crypto": "^1.0.4",
     "clay-driver-memory": "^1.2.0",
     "co": "^4.6.0",
-    "debug": "^2.3.2",
-    "json-pointer": "^0.6.0"
+    "debug": "^2.2.0",
+    "json-pointer": "^0.6.0",
+    "sg-templates": "^1.2.2"
   },
   "devDependencies": {
     "ababel": "^1.1.12",
@@ -44,7 +46,8 @@
     "coz": "^6.0.20",
     "filecopy": "^2.1.2",
     "injectmock": "^2.0.0",
-    "sg-travis": "^1.1.33"
+    "sg-travis": "^1.1.33",
+    "writeout": "^2.1.0"
   },
   "engines": {
     "node": ">=6",
