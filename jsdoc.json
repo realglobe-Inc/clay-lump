@@ -940,10 +940,122 @@
       }
     },
     {
+      "name": "hasSheet",
+      "access": "",
+      "virtual": false,
+      "description": "Check sheet exists",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "description": "Optional settings",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "createSheet",
+      "access": "",
+      "virtual": false,
+      "description": "Create a new sheet",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "description": "Optional settings",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Sheet",
+        "description": "- Created sheet"
+      }
+    },
+    {
+      "name": "getSheet",
+      "access": "",
+      "virtual": false,
+      "description": "Get a sheet",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "description": "Optional settings",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "Sheet",
+        "description": ""
+      }
+    },
+    {
+      "name": "sheetPointer",
+      "access": "",
+      "virtual": false,
+      "description": "Pointer for sheet",
+      "parameters": [
+        {
+          "name": "sheetName",
+          "type": "string",
+          "description": "Name of sheet",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        },
+        {
+          "name": "options",
+          "type": "Object",
+          "description": "Optional settings",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "string",
+        "description": "- JSON pointer for sheet"
+      }
+    },
+    {
       "name": "sheet",
       "access": "",
       "virtual": false,
-      "description": "Access to lump shared sheet",
+      "description": "Access to lump sheet",
       "parameters": [
         {
           "name": "sheetName",
@@ -993,19 +1105,19 @@
       ],
       "examples": [],
       "returns": {
-        "type": "PrivateSheet",
+        "type": "Sheet",
         "description": ""
       }
     },
     {
-      "name": "configSheet",
+      "name": "privateConfigSheet",
       "access": "",
       "virtual": false,
       "description": "Access to config sheet",
       "parameters": [],
       "examples": [],
       "returns": {
-        "type": "PrivateSheet",
+        "type": "Sheet",
         "description": ""
       }
     },
