@@ -1055,7 +1055,7 @@
       "name": "sheet",
       "access": "",
       "virtual": false,
-      "description": "Access to lump sheet",
+      "description": "Access to lump sheet. Return existing one or create new one",
       "parameters": [
         {
           "name": "sheetName",
