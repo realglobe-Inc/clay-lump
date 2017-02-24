@@ -24,9 +24,12 @@
   "homepage": "https://github.com/realglobe-Inc/clay-lump#readme",
   "dependencies": {
     "abind": "^1.0.3",
-    "clay-constants": "^1.2.1",
-    "clay-crypto": "^1.0.7",
-    "clay-driver-memory": "^2.1.2",
+    "asobj": "^1.5.0",
+    "clay-constants": "^1.3.3",
+    "clay-crypto": "^1.0.8",
+    "clay-driver-memory": "^2.1.5",
+    "clay-resource": "^1.0.3",
+    "clay-resource-name": "^1.0.1",
     "co": "^4.6.0",
     "debug": "^2.6.1"
   },
@@ -43,7 +46,8 @@
     "coz": "^6.0.20",
     "filecopy": "^3.0.0",
     "injectmock": "^2.0.0",
-    "sg-templates": "^1.3.1",
+    "request": "^2.79.0",
+    "sg-templates": "^1.3.2",
     "sugos-travis": "^2.0.7",
     "writeout": "^2.1.0"
   },

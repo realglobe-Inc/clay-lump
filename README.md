@@ -88,7 +88,7 @@ co(function * () {
       filter: { type: 'Saint Bernard' },
       page: { number: 1, size: 25 }
     })
-    let john = yield dogs.create({ name: 'john', type: 'Saint Bernard', age: 3 })
+    let john = yield Dog.create({ name: 'john', type: 'Saint Bernard', age: 3 })
     console.log(john) // -> { id: '1a6358694adb4aa89c15f94be50d5b78', name: 'john', type: 'Saint Bernard', age: 3 }
   }
 
@@ -105,7 +105,6 @@ co(function * () {
     let [ john ] = yield Dog.list({ filter: { name: 'john' } }) // Synced from lump01
     console.log(john) // -> { id: '1a6358694adb4aa89c15f94be50d5b78', name: 'john', type: 'Saint Bernard', age: 3 }
   }
-
 }).catch((err) => console.error(err))
 
 ```
@@ -124,7 +123,7 @@ For more detail, see [API Guide](./doc/api/api.md)
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/clay-lump/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/clay-lump/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
