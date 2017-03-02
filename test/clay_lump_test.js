@@ -20,7 +20,7 @@ describe('clay-lump', function () {
   }))
 
   it('Clay lump', () => co(function * () {
-    let lump = new ClayLump({})
+    let lump = new ClayLump('some-lump', {})
     ok(lump)
 
     let Toys = yield lump.resource('Toys')
@@ -34,18 +34,18 @@ describe('clay-lump', function () {
   }))
 
   it('Merge lumps', () => co(function * () {
-    let lump01 = new ClayLump({})
-    let lump02 = new ClayLump({})
+    let lump01 = new ClayLump('lump-01', {})
+    let lump02 = new ClayLump('lump-02', {})
 
     {
       const Dog = yield lump01.resource('Dog')
-      console.log(Dog.name)
-
+      yield Dog.create({ name: 'john', type: 'Saint Bernard', age: 3 })
       let dogs = yield Dog.list({
         filter: { type: 'Saint Bernard' },
         page: { number: 1, size: 25 }
       })
-      let john = yield Dog.create({ name: 'john', type: 'Saint Bernard', age: 3 })
+      equal(dogs.meta.total, 1)
+      equal(dogs.meta.length, 1)
     }
 
     {
@@ -60,9 +60,10 @@ describe('clay-lump', function () {
       let dogs = (yield Dog.list({
         filter: { name: 'john' }
       }))
+
       console.log('dogs', dogs)
       let [ john ] = dogs.entities // Synced from lump01
-      console.log(john) // -> { id: '1a6358694adb4aa89c15f94be50d5b78', name: 'john', type: 'Saint Bernard', age: 3 }
+      // console.log(john)
     }
   }))
 })
