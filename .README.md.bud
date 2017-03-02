@@ -12,17 +12,17 @@ module.exports = readmeMdBud({
   repo: pkg.repository,
   sections: 'doc/guides/*.md.hbs',
   badges: {
+    // TODO OSS
+    // travis: true,
     travisCom: true,
     travisComToken: 'aeFzCpBZebyaRijpCFmm',
-    codeclimate: false,
-    codeclimateCoverage: false,
-    gemnasium: false,
     npm: true,
     standard: true
   },
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
+    values: require('./lib')
   }
 })
 

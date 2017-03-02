@@ -5,7 +5,7 @@
 'use strict'
 
 const create = require('../lib/create.js')
-const assert = require('assert')
+const { ok } = require('assert')
 const co = require('co')
 
 describe('create', function () {
@@ -20,7 +20,8 @@ describe('create', function () {
   }))
 
   it('Create', () => co(function * () {
-
+    ok(create('foo'))
+    ok(create({ name: 'foo' }))
   }))
 })
 

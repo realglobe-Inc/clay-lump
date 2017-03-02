@@ -1,14 +1,14 @@
 /**
- * Test case for assertMix.
+ * Test case for mergeMix.
  * Runs with mocha.
  */
 'use strict'
 
-const assertMix = require('../lib/mixins/assert_mix.js')
+const mergeMix = require('../lib/mixins/merge_mix.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('assert-mix', function () {
+describe('merge-mix', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,7 +19,7 @@ describe('assert-mix', function () {
 
   }))
 
-  it('Assert mix', () => co(function * () {
+  it('Merge mix', () => co(function * () {
 
   }))
 })

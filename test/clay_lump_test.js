@@ -5,14 +5,14 @@
 'use strict'
 
 const ClayLump = require('../lib/clay_lump.js')
-const assert = require('assert')
-const asleep = require('asleep')
+const { ok, equal, deepEqual } = require('assert')
 const co = require('co')
 
 describe('clay-lump', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
+
   }))
 
   after(() => co(function * () {
@@ -20,46 +20,51 @@ describe('clay-lump', function () {
   }))
 
   it('Clay lump', () => co(function * () {
-    let lump01 = new ClayLump()
-    let lump02 = new ClayLump()
-    yield lump01.open()
-    yield lump02.open()
+    let lump = new ClayLump('some-lump', {})
+    ok(lump)
+
+    let Toys = yield lump.resource('Toys')
+    ok(Toys)
+
+    let foo = yield Toys.create({
+      name: 'foo'
+    })
+    ok(foo.id)
+    equal(foo.name, 'foo')
+  }))
+
+  it('Merge lumps', () => co(function * () {
+    let lump01 = new ClayLump('lump-01', {})
+    let lump02 = new ClayLump('lump-02', {})
 
     {
-      let dogs = lump01.sheet('dogs')
-      assert.ok(dogs)
-
-      yield dogs.set('John', { type: 'Saint Bernard', age: 3 })
-      let John = yield dogs.get('John')
-      assert.deepEqual(John, { type: 'Saint Bernard', age: 3 })
-
-      let keys = yield dogs.keys()
-      assert.deepEqual(keys, [ 'John' ])
-
-      let all = yield dogs.all()
-      assert.deepEqual(all, [ { type: 'Saint Bernard', age: 3 } ])
-
-      yield dogs.set('Vicky', { type: 'Chihuahua', age: 1 })
+      const Dog = yield lump01.resource('Dog')
+      yield Dog.create({ name: 'john', type: 'Saint Bernard', age: 3 })
+      let dogs = yield Dog.list({
+        filter: { type: 'Saint Bernard' },
+        page: { number: 1, size: 25 }
+      })
+      equal(dogs.meta.total, 1)
+      equal(dogs.meta.length, 1)
     }
 
-    yield asleep(10)
     {
-      let dogs = lump02.sheet('dogs')
-      yield dogs.set('Vicky', { type: 'Chihuahua', age: 2 })
-
-      let description = yield lump02.describe()
-      assert.deepEqual(description.sheets, { shared: [ 'dogs' ], private: [ '$$config' ] })
+      const Dog = yield lump02.resource('Dog')
+      let bess = yield Dog.create({ name: 'bess', type: 'Chihuahua', age: 1 })
     }
 
-    yield lump02.sync(lump01)
+    // Merge lumps01 to lump02
+    yield lump02.merge(lump01)
     {
-      let dogs = lump01.sheet('dogs')
-      let Vicky = yield dogs.get('Vicky')
-      assert.equal(Vicky.age, 2) // Updated from lump02
-    }
+      const Dog = yield lump02.resource('Dog')
+      let dogs = (yield Dog.list({
+        filter: { name: 'john' }
+      }))
 
-    yield lump01.close()
-    yield lump02.close()
+      console.log('dogs', dogs)
+      let [ john ] = dogs.entities // Synced from lump01
+      // console.log(john)
+    }
   }))
 })
 

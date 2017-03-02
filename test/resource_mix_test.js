@@ -1,14 +1,14 @@
 /**
- * Test case for sharedSheet.
+ * Test case for resourceMix.
  * Runs with mocha.
  */
 'use strict'
 
-const sharedSheet = require('../lib/sheets/shared_sheet.js')
+const resourceMix = require('../lib/mixins/resource_mix.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('shared-sheet', function () {
+describe('resource-mix', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,7 +19,7 @@ describe('shared-sheet', function () {
 
   }))
 
-  it('Shared sheet', () => co(function * () {
+  it('Resource mix', () => co(function * () {
 
   }))
 })

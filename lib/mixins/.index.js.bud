@@ -4,10 +4,10 @@
 
 'use strict'
 
-const apeTmpl = require('ape-tmpl')
+const { indexJsBud } = require('ape-tmpl')
 
-module.exports = apeTmpl.indexJsBud({
-  desc: 'Class mixin generator',
+module.exports = indexJsBud({
+  desc: 'Mixin functions',
   module: 'mixins',
   dirname: __dirname,
   subclasses: []

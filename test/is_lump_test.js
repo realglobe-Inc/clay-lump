@@ -6,7 +6,7 @@
 
 const isLump = require('../lib/is_lump.js')
 const ClayLump = require('../lib/clay_lump')
-const assert = require('assert')
+const { ok } = require('assert')
 const co = require('co')
 
 describe('is-lump', function () {
@@ -21,10 +21,8 @@ describe('is-lump', function () {
   }))
 
   it('Is lump', () => co(function * () {
-    let lump = new ClayLump()
-    assert.ok(isLump(lump))
-    assert.ok(!isLump(ClayLump))
-    assert.ok(!isLump('hoge'))
+    ok(isLump(new ClayLump()))
+    ok(isLump({ $$lump: true }))
   }))
 })
 

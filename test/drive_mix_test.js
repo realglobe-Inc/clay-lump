@@ -1,14 +1,14 @@
 /**
- * Test case for mergeSheets.
+ * Test case for driveMix.
  * Runs with mocha.
  */
 'use strict'
 
-const mergeSheets = require('../lib/merging/merge_sheets.js')
+const driveMix = require('../lib/mixins/drive_mix.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('merge-sheets', function () {
+describe('drive-mix', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,7 +19,7 @@ describe('merge-sheets', function () {
 
   }))
 
-  it('Merge sheets', () => co(function * () {
+  it('Drive mix', () => co(function * () {
 
   }))
 })

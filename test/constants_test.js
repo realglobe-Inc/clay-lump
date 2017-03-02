@@ -20,7 +20,9 @@ describe('constants', function () {
   }))
 
   it('Constants', () => co(function * () {
-
+    for (let name of Object.keys(constants)) {
+      assert.ok(constants[ name ])
+    }
   }))
 })
 
