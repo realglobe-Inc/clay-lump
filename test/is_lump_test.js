@@ -21,7 +21,7 @@ describe('is-lump', function () {
   }))
 
   it('Is lump', () => co(function * () {
-    ok(isLump(new ClayLump()))
+    ok(isLump(new ClayLump('Ultra Fruit')))
     ok(isLump({ $$lump: true }))
   }))
 })
