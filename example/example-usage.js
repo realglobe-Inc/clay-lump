@@ -33,6 +33,6 @@ co(function * () {
   {
     const Dog = yield lump02.resource('Dog')
     let [ john ] = (yield Dog.list({ filter: { name: 'john' } })).entities // Synced from lump01
-    console.log(john) // -> { id: '1a6358694adb4aa89c15f94be50d5b78', name: 'john', type: 'Saint Bernard', age: 3 }
+    console.log(john) // -> { id: '1a6358694adb4aa89c15f94be50d5b78', name: 'john', type:x 'Saint Bernard', age: 3 }
   }
 }).catch((err) => console.error(err))
