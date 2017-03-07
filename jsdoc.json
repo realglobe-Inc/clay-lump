@@ -12,19 +12,27 @@
         "description": "Local key value storage of Clay DB.",
         "parameters": [
           {
-            "name": "config",
-            "type": "Object",
-            "description": "Lump configuration",
+            "name": "name",
+            "type": "string",
+            "description": "Lump name",
             "default": "",
             "optional": "",
             "nullable": ""
           },
           {
-            "name": "config.driver",
+            "name": "options",
+            "type": "Object",
+            "description": "Optional settings",
+            "default": "{}",
+            "optional": true,
+            "nullable": ""
+          },
+          {
+            "name": "options.driver",
             "type": "Driver",
             "description": "Clay driver instance",
             "default": "",
-            "optional": "",
+            "optional": true,
             "nullable": ""
           }
         ],
@@ -42,6 +50,14 @@
             "type": "Promise",
             "description": ""
           }
+        },
+        {
+          "name": "assert",
+          "access": "",
+          "virtual": false,
+          "description": "Asset lump state and throw error if something is wrong",
+          "parameters": [],
+          "examples": []
         }
       ]
     }

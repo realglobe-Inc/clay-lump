@@ -1,12 +1,13 @@
-# clay-lump@1.0.0
+# clay-lump@2.0.0
 
 Lump of clay-db
 
 + Functions
   + [isLump(instance)](#clay-lump-function-is-lump)
 + [`ClayLump`](#clay-lump-classes) Class
-  + [new ClayLump(config)](#clay-lump-classes-clay-lump-constructor)
+  + [new ClayLump(name, options)](#clay-lump-classes-clay-lump-constructor)
   + [lump.sync()](#clay-lump-classes-clay-lump-sync)
+  + [lump.assert()](#clay-lump-classes-clay-lump-assert)
 
 ## Functions
 
@@ -33,14 +34,15 @@ Local key value storage of Clay DB.
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-constructor" ></a>
 
-### new ClayLump(config)
+### new ClayLump(name, options)
 
 Constructor of ClayLump class
 
 | Param | Type | Description |
 | ----- | --- | -------- |
-| config | Object | Lump configuration |
-| config.driver | Driver | Clay driver instance |
+| name | string | Lump name |
+| options | Object | Optional settings |
+| options.driver | Driver | Clay driver instance |
 
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-sync" ></a>
@@ -48,6 +50,12 @@ Constructor of ClayLump class
 ### lump.sync() -> `Promise`
 
 Two-way merge
+
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-assert" ></a>
+
+### lump.assert()
+
+Asset lump state and throw error if something is wrong
 
 
 
