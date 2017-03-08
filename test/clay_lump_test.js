@@ -23,7 +23,7 @@ describe('clay-lump', function () {
     let lump = new ClayLump('some-lump', {})
     ok(lump)
 
-    let Toys = yield lump.resource('Toys')
+    let Toys = lump.resource('Toys')
     ok(Toys)
 
     let foo = yield Toys.create({
@@ -38,7 +38,7 @@ describe('clay-lump', function () {
     let lump02 = new ClayLump('lump-02', {})
 
     {
-      const Dog = yield lump01.resource('Dog')
+      const Dog = lump01.resource('Dog')
       yield Dog.create({ name: 'john', type: 'Saint Bernard', age: 3 })
       let dogs = yield Dog.list({
         filter: { type: 'Saint Bernard' },
@@ -49,13 +49,13 @@ describe('clay-lump', function () {
     }
 
     {
-      const Dog = yield lump02.resource('Dog')
+      const Dog = lump02.resource('Dog')
       let bess = yield Dog.create({ name: 'bess', type: 'Chihuahua', age: 1 })
 
       // Merge lumps01 to lump02
       yield lump02.merge(lump01)
       {
-        const Dog = yield lump02.resource('Dog')
+        const Dog = lump02.resource('Dog')
         let dogsMatchJohn = (yield Dog.list({
           filter: { name: 'john' }
         }))
