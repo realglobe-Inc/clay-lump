@@ -1,4 +1,4 @@
-# clay-lump@3.0.2
+# clay-lump@3.1.0
 
 Lump of clay-db
 
@@ -127,6 +127,7 @@ Get a resource with name
 | ----- | --- | -------- |
 | resourceName | string,Object | Name of resource |
 | options | Object | Optional settings |
+| options.renew | boolean | Use no cache |
 
 
 <a class='md-heading-link' name="clay-lump-classes-clay-lump-resourceNames" ></a>
@@ -231,6 +232,7 @@ Get a resource with name
 | ----- | --- | -------- |
 | resourceName | string,Object | Name of resource |
 | options | Object | Optional settings |
+| options.renew | boolean | Use no cache |
 
 
 <a class='md-heading-link' name="clay-lump-classes-resource-mixed-resourceNames" ></a>
