@@ -3,13 +3,17 @@
     {
       "name": "ClayLump",
       "description": "",
-      "extends": [],
+      "extends": [
+        "DriverMixed",
+        "MergeMixed",
+        "ResourceMixed"
+      ],
       "access": "",
       "virtual": false,
       "fires": "",
       "constructor": {
         "name": "ClayLump",
-        "description": "Local key value storage of Clay DB.",
+        "description": "Local storage of Clay DB.",
         "parameters": [
           {
             "name": "name",
@@ -44,7 +48,16 @@
           "access": "",
           "virtual": false,
           "description": "Two-way merge",
-          "parameters": [],
+          "parameters": [
+            {
+              "name": "lump",
+              "type": "ClayLump",
+              "description": "Lump to sync",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
           "examples": [],
           "returns": {
             "type": "Promise",
@@ -58,6 +71,294 @@
           "description": "Asset lump state and throw error if something is wrong",
           "parameters": [],
           "examples": []
+        },
+        {
+          "name": "registerDriver",
+          "access": "",
+          "virtual": false,
+          "description": "Register a driver",
+          "parameters": [
+            {
+              "name": "driver",
+              "type": "Driver",
+              "description": "Driver to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "merge",
+          "access": "",
+          "virtual": false,
+          "description": "Merge another lump",
+          "parameters": [
+            {
+              "name": "lump",
+              "type": "ClayLump",
+              "description": "Lump to merge",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "mergeResource",
+          "access": "",
+          "virtual": false,
+          "description": "Merge a resource",
+          "parameters": [
+            {
+              "name": "resource",
+              "type": "ClayResource",
+              "description": "Resource to merge",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "resource",
+          "access": "",
+          "virtual": false,
+          "description": "Get a resource with name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": [
+                "string",
+                "Object"
+              ],
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayResource",
+            "description": ""
+          }
+        },
+        {
+          "name": "resourceNames",
+          "access": "",
+          "virtual": false,
+          "description": "Get all resource names\nReturn all resources",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<ClayResource>>",
+            "description": ""
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "driver",
+          "access": "",
+          "virtual": false,
+          "description": "Registered Driver",
+          "type": ""
+        }
+      ]
+    },
+    {
+      "name": "DriverMixed",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "DriverMixed",
+        "description": "",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "registerDriver",
+          "access": "",
+          "virtual": false,
+          "description": "Register a driver",
+          "parameters": [
+            {
+              "name": "driver",
+              "type": "Driver",
+              "description": "Driver to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        }
+      ],
+      "properties": [
+        {
+          "name": "driver",
+          "access": "",
+          "virtual": false,
+          "description": "Registered Driver",
+          "type": ""
+        }
+      ]
+    },
+    {
+      "name": "MergeMixed",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "MergeMixed",
+        "description": "",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "merge",
+          "access": "",
+          "virtual": false,
+          "description": "Merge another lump",
+          "parameters": [
+            {
+              "name": "lump",
+              "type": "ClayLump",
+              "description": "Lump to merge",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "mergeResource",
+          "access": "",
+          "virtual": false,
+          "description": "Merge a resource",
+          "parameters": [
+            {
+              "name": "resource",
+              "type": "ClayResource",
+              "description": "Resource to merge",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "ResourceMixed",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "ResourceMixed",
+        "description": "",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "resource",
+          "access": "",
+          "virtual": false,
+          "description": "Get a resource with name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": [
+                "string",
+                "Object"
+              ],
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayResource",
+            "description": ""
+          }
+        },
+        {
+          "name": "resourceNames",
+          "access": "",
+          "virtual": false,
+          "description": "Get all resource names\nReturn all resources",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise.<Array.<ClayResource>>",
+            "description": ""
+          }
         }
       ]
     }
@@ -70,7 +371,7 @@
       "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
       "parameters": [],
       "examples": [
-        "co(function * () {\n  let lump = clayLump({\n    // Options here\n  })\n  yield lump.open()\n}).catch((err) => console.error(err))"
+        "async function tryClayLump () {\n   let lump = clayLump({\n     // Options here\n   })\n   const Product = lump.resource('Product')\n   // ... //\n }\n tryClayLump()"
       ],
       "returns": {
         "type": "ClayLump",

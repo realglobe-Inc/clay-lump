@@ -30,14 +30,14 @@ module.exports = {
         [item.name]: wrapper(item)
       }), {})
       let classes = byName(jsdoc[ 'classes' ], { wrapper: asClass })
-      let { ClayLump } = classes
 
       let functions = byName(jsdoc[ 'functions' ], { wrapper: asFunc })
       let { create, isLump } = functions
       return {
-        classes: [
-          ClayLump
-        ].filter(Boolean),
+        classes: Object.keys(classes)
+          .filter((name) => /^Clay/.test(name) || /Mixed$/.test(name))
+          .map((name) => classes[ name ])
+          .filter(Boolean),
         functions: [
           create,
           isLump

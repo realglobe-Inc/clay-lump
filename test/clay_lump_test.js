@@ -27,7 +27,8 @@ describe('clay-lump', function () {
     ok(Toys)
 
     let foo = yield Toys.create({
-      name: 'foo'
+      name: 'foo',
+      date: new Date()
     })
     ok(foo.id)
     equal(foo.name, 'foo')
