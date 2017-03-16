@@ -5,7 +5,7 @@
 'use strict'
 
 const driveMix = require('../lib/mixins/drive_mix.js')
-const assert = require('assert')
+const { ok } = require('assert')
 const co = require('co')
 
 describe('drive-mix', function () {
@@ -20,7 +20,8 @@ describe('drive-mix', function () {
   }))
 
   it('Drive mix', () => co(function * () {
-
+    const mixed = driveMix(class {})
+    ok(mixed)
   }))
 })
 

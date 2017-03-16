@@ -5,7 +5,7 @@
 'use strict'
 
 const mergeMix = require('../lib/mixins/merge_mix.js')
-const assert = require('assert')
+const { ok } = require('assert')
 const co = require('co')
 
 describe('merge-mix', function () {
@@ -20,7 +20,8 @@ describe('merge-mix', function () {
   }))
 
   it('Merge mix', () => co(function * () {
-
+    const mixed = mergeMix(class {})
+    ok(mixed)
   }))
 })
 
