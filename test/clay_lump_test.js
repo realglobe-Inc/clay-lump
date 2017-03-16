@@ -70,6 +70,19 @@ describe('clay-lump', function () {
       }
     }
   }))
+
+  it('Auto Refs', () => co(function * () {
+    let lump01 = new ClayLump('lump-01', {})
+    let Org = lump01.resource('Org')
+    let User = lump01.resource('User')
+    let org01 = yield Org.create({ name: 'org01' })
+    let user01 = yield User.create({ name: 'user01', org: org01 })
+
+    let user01AsOne = yield User.one(user01.id)
+    equal(user01AsOne.org.name, 'org01')
+
+    deepEqual(lump01.driver._storages.User[ user01.id ].org, { $ref: `Org#${org01.id}` })
+  }))
 })
 
 /* global describe, before, after, it */
