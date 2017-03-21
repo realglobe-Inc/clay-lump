@@ -123,6 +123,24 @@ For more detail, see [API Guide](./doc/api/api.md)
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
+<!-- Section from "doc/guides/03.API.md.hbs" Start -->
+
+<a name="section-doc-guides-03-a-p-i-md"></a>
+
+API
+-----
+
++ [clay-lump@3.1.1](./doc/api/api.md)
+  + [create()](./doc/api/api.md#clay-lump-create)
+  + [isLump(instance)](./doc/api/api.md#clay-lump-is-lump)
+  + [ClayLump](./doc/api/api.md#clay-lump-class)
+  + [DriverMixed](./doc/api/api.md#driver-mixed-class)
+  + [MergeMixed](./doc/api/api.md#merge-mixed-class)
+  + [ResourceMixed](./doc/api/api.md#resource-mixed-class)
+
+
+<!-- Section from "doc/guides/03.API.md.hbs" End -->
+
 
 <!-- Sections Start -->
 

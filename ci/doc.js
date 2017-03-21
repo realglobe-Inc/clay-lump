@@ -31,5 +31,8 @@ apeTasking.runTasks('build', [
       console.log(`File generated: ${result.filename}`)
     }
   }),
-  () => coz.render('doc/**/.*.bud')
+  () => coz.render([
+    'doc/**/.*.bud',
+    '.*.bud'
+  ])
 ], true)

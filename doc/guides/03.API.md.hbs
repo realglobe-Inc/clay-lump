@@ -1,0 +1,10 @@
+API
+-----
+
++ [{{pkg.name}}@{{pkg.version}}]({{{vars.apiPath}}})
+{{#each vars.signature.functions}}
+  + [{{name}}({{paramDesc}})]({{{../vars.apiPath}}}#{{../pkg.name}}-{{{spinalcase name}}})
+{{/each}}
+{{#each vars.signature.classes}}
+  + [{{name}}]({{{../vars.apiPath}}}#{{{spinalcase name}}}-class)
+{{/each}}

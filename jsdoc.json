@@ -381,7 +381,7 @@
   ],
   "functions": [
     {
-      "name": "clayLump",
+      "name": "create",
       "access": "",
       "virtual": false,
       "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
@@ -417,7 +417,7 @@
     },
     {
       "name": "driverMix",
-      "access": "",
+      "access": "private",
       "virtual": false,
       "description": "Mix driver support",
       "parameters": [
@@ -438,7 +438,7 @@
     },
     {
       "name": "mergeMix",
-      "access": "",
+      "access": "private",
       "virtual": false,
       "description": "Mix merge support",
       "parameters": [
@@ -459,7 +459,7 @@
     },
     {
       "name": "resourceMix",
-      "access": "",
+      "access": "private",
       "virtual": false,
       "description": "Mix resource support",
       "parameters": [
