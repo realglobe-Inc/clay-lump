@@ -63,7 +63,7 @@ Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Advanced Usage](#advanced-usage)
-  * [Applying Policy](#applying-policy)
+  * [Applying Policies](#applying-policies)
 - [API](#api)
 - [License](#license)
 - [Links](#links)
