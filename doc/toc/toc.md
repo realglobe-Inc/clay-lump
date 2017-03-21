@@ -1,5 +1,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
+- [Advanced Usage](#advanced-usage)
+  * [Applying Policies](#applying-policies)
 - [API](#api)
 - [License](#license)
 - [Links](#links)

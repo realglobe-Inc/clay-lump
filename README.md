@@ -53,6 +53,24 @@ Lump of clay-db
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
+
+<a name="section-doc-guides-00-t-o-c-md"></a>
+
+Table of Contents
+----------------
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Advanced Usage](#advanced-usage)
+  * [Applying Policies](#applying-policies)
+- [API](#api)
+- [License](#license)
+- [Links](#links)
+
+
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
@@ -74,13 +92,22 @@ $ npm install clay-lump --save
 Usage
 ---------
 
+Three steps to use use clay lump.
+
+1. Create lump instance with `clayLump(config)`.
+2. Access resource with `lump.resource(resourceName)`
+3. Use resource methods like `resource.create()` or `resource.list()` to handle data
+
 ```javascript
 'use strict'
 
 const clayLump = require('clay-lump')
+const { SqliteDriver } = require('clay-driver-sqlite')
 
 async function exampleClayLump () {
-  let lump01 = clayLump('lump01')
+  let lump01 = clayLump('lump01', {
+    driver: new SqliteDriver('var/example-lump01.db')
+  })
 
   // Access to data sheet
   {
@@ -123,16 +150,73 @@ For more detail, see [API Guide](./doc/api/api.md)
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.API.md.hbs" Start -->
+<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" Start -->
 
-<a name="section-doc-guides-03-a-p-i-md"></a>
+<a name="section-doc-guides-03-advanced-usage-md"></a>
+
+Advanced Usage
+--------------
+
+### Applying Policies
+
+To restrict data structure of resources, you can pass [ClayPolicy]([https://github.com/realglobe-Inc/clay-policy])
+to `policies` options of clay lump constructor.
+
+```javascript
+'use strict'
+
+const clayLump = require('clay-lump')
+const clayPolicy = require('clay-policy')
+const { STRING, DATE } = clayPolicy.Types
+
+async function exampleClayLump () {
+  let lump01 = clayLump('lump02', {
+    // Restrict policies
+    policies: {
+      User: clayPolicy({
+        username: {
+          type: STRING,
+          required: true
+        },
+        birthday: {
+          type: DATE
+        },
+        rank: {
+          type: STRING,
+          oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+        }
+      }),
+      /* ... */
+    }
+  })
+
+  // Access to data sheet
+  {
+    const User = lump01.resource('User')
+    console.log(User.getPolicy()) // -> Returns policy info
+
+    let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
+  }
+}
+
+exampleClayLump().catch((err) => console.error(err))
+
+
+```
+
+
+<!-- Section from "doc/guides/03.Advanced Usage.md.hbs" End -->
+
+<!-- Section from "doc/guides/10.API.md.hbs" Start -->
+
+<a name="section-doc-guides-10-a-p-i-md"></a>
 
 API
 -----
 
-+ [clay-lump@3.1.2](./doc/api/api.md)
-  + [create()](./doc/api/api.md#clay-lump-create)
-  + [isLump(instance)](./doc/api/api.md#clay-lump-is-lump)
++ [clay-lump@3.1.4](./doc/api/api.md)
+  + [create()](./doc/api/api.md#clay-lump-function-create)
+  + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
   + [DriverMixed](./doc/api/api.md#driver-mixed-class)
   + [MergeMixed](./doc/api/api.md#merge-mixed-class)
@@ -140,7 +224,7 @@ API
   + [ResourceMixed](./doc/api/api.md#resource-mixed-class)
 
 
-<!-- Section from "doc/guides/03.API.md.hbs" End -->
+<!-- Section from "doc/guides/10.API.md.hbs" End -->
 
 
 <!-- Sections Start -->
