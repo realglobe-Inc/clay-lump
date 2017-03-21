@@ -27,12 +27,12 @@
     "argx": "^3.0.2",
     "aslogger": "^1.0.2",
     "asobj": "^1.5.0",
-    "clay-constants": "^2.5.1",
+    "clay-constants": "^2.6.1",
     "clay-crypto": "^2.0.2",
     "clay-driver-base": "^2.0.1",
     "clay-driver-memory": "^3.1.1",
     "clay-entity": "^1.5.2",
-    "clay-resource": "^2.3.7",
+    "clay-resource": "^2.3.9",
     "clay-resource-name": "^3.0.1",
     "co": "^4.6.0",
     "debug": "^2.6.3"
@@ -52,7 +52,7 @@
     "filecopy": "^3.0.1",
     "injectmock": "^2.0.0",
     "request": "^2.81.0",
-    "sg-templates": "^1.4.1",
+    "sg-templates": "^1.4.2",
     "sugos-travis": "^2.0.7",
     "writeout": "^2.1.0"
   },
