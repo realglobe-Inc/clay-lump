@@ -1,30 +1,30 @@
-# clay-lump@3.1.1
+# clay-lump@3.1.2
 
 Lump of clay-db
 
 + Functions
   + [create()](#clay-lump-function-create)
   + [isLump(instance)](#clay-lump-function-is-lump)
-+ [`ClayLump`](#clay-lump-class) Class
-  + [new ClayLump(name, options)](#clay-lump-class-clay-lump-constructor)
-  + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
-  + [lump.assert()](#clay-lump-class-clay-lump-assert)
-  + [lump.registerDriver(driver)](#clay-lump-class-clay-lump-registerDriver)
-  + [lump.merge(lump, options)](#clay-lump-class-clay-lump-merge)
-  + [lump.mergeResource(resource)](#clay-lump-class-clay-lump-mergeResource)
-  + [lump.resource(resourceName, options)](#clay-lump-class-clay-lump-resource)
-  + [lump.resourceNames()](#clay-lump-class-clay-lump-resourceNames)
-+ [`DriverMixed`](#clay-lump-class) Class
-  + [new DriverMixed()](#clay-lump-class-driver-mixed-constructor)
-  + [mixed.registerDriver(driver)](#clay-lump-class-driver-mixed-registerDriver)
-+ [`MergeMixed`](#clay-lump-class) Class
-  + [new MergeMixed()](#clay-lump-class-merge-mixed-constructor)
-  + [mixed.merge(lump, options)](#clay-lump-class-merge-mixed-merge)
-  + [mixed.mergeResource(resource)](#clay-lump-class-merge-mixed-mergeResource)
-+ [`ResourceMixed`](#clay-lump-class) Class
-  + [new ResourceMixed()](#clay-lump-class-resource-mixed-constructor)
-  + [mixed.resource(resourceName, options)](#clay-lump-class-resource-mixed-resource)
-  + [mixed.resourceNames()](#clay-lump-class-resource-mixed-resourceNames)
++ [`ClayLump`](#clay-lump-classes) Class
+  + [new ClayLump(name, options)](#clay-lump-classes-clay-lump-constructor)
+  + [lump.sync(lump)](#clay-lump-classes-clay-lump-sync)
+  + [lump.assert()](#clay-lump-classes-clay-lump-assert)
+  + [lump.registerDriver(driver)](#clay-lump-classes-clay-lump-registerDriver)
+  + [lump.merge(lump, options)](#clay-lump-classes-clay-lump-merge)
+  + [lump.mergeResource(resource)](#clay-lump-classes-clay-lump-mergeResource)
+  + [lump.resource(resourceName, options)](#clay-lump-classes-clay-lump-resource)
+  + [lump.resourceNames()](#clay-lump-classes-clay-lump-resourceNames)
++ [`DriverMixed`](#clay-lump-classes) Class
+  + [new DriverMixed()](#clay-lump-classes-driver-mixed-constructor)
+  + [mixed.registerDriver(driver)](#clay-lump-classes-driver-mixed-registerDriver)
++ [`MergeMixed`](#clay-lump-classes) Class
+  + [new MergeMixed()](#clay-lump-classes-merge-mixed-constructor)
+  + [mixed.merge(lump, options)](#clay-lump-classes-merge-mixed-merge)
+  + [mixed.mergeResource(resource)](#clay-lump-classes-merge-mixed-mergeResource)
++ [`ResourceMixed`](#clay-lump-classes) Class
+  + [new ResourceMixed()](#clay-lump-classes-resource-mixed-constructor)
+  + [mixed.resource(resourceName, options)](#clay-lump-classes-resource-mixed-resource)
+  + [mixed.resourceNames()](#clay-lump-classes-resource-mixed-resourceNames)
 
 ## Functions
 
@@ -33,8 +33,6 @@ Lump of clay-db
 ### create() -> `ClayLump`
 
 Create a lump instance. Just an alias of `new ClayLump(config)`
-**Example**:
-
 ```javascript
 async function tryClayLump () {
    let lump = clayLump({
@@ -57,21 +55,25 @@ Check if an instance is a lump
 
 
 
-<a class='md-heading-link' name="clay-lump-class"></a>
+<a class='md-heading-link' name="clay-lump-classes"></a>
 
 ## `ClayLump` Class
 
 Local storage of Clay DB.
 
-**Extends**:
+**Extends**: 
 
 + `DriverMixed`
+
+
 + `MergeMixed`
+
+
 + `ResourceMixed`
 
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-constructor" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-constructor" ></a>
 
 ### new ClayLump(name, options)
 
@@ -84,7 +86,7 @@ Constructor of ClayLump class
 | options.driver | Driver | Clay driver instance |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-sync" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-sync" ></a>
 
 ### lump.sync(lump) -> `Promise`
 
@@ -95,13 +97,13 @@ Two-way merge
 | lump | ClayLump | Lump to sync |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-assert" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-assert" ></a>
 
 ### lump.assert()
 
 Asset lump state and throw error if something is wrong
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-registerDriver" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-registerDriver" ></a>
 
 ### lump.registerDriver(driver)
 
@@ -112,7 +114,7 @@ Register a driver
 | driver | Driver | Driver to register |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-merge" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-merge" ></a>
 
 ### lump.merge(lump, options) -> `Promise`
 
@@ -124,7 +126,7 @@ Merge another lump
 | options | Object | Optional settings |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-mergeResource" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-mergeResource" ></a>
 
 ### lump.mergeResource(resource) -> `Promise`
 
@@ -135,7 +137,7 @@ Merge a resource
 | resource | ClayResource | Resource to merge |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-resource" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-resource" ></a>
 
 ### lump.resource(resourceName, options) -> `ClayResource`
 
@@ -148,14 +150,14 @@ Get a resource with name
 | options.renew | boolean | Use no cache |
 
 
-<a class='md-heading-link' name="clay-lump-class-clay-lump-resourceNames" ></a>
+<a class='md-heading-link' name="clay-lump-classes-clay-lump-resourceNames" ></a>
 
 ### lump.resourceNames() -> `Promise.<Array.<ClayResource>>`
 
 Get all resource names
 Return all resources
 
-<a class='md-heading-link' name="clay-lump-class"></a>
+<a class='md-heading-link' name="clay-lump-classes"></a>
 
 ## `DriverMixed` Class
 
@@ -164,7 +166,7 @@ Return all resources
 
 
 
-<a class='md-heading-link' name="clay-lump-class-driver-mixed-constructor" ></a>
+<a class='md-heading-link' name="clay-lump-classes-driver-mixed-constructor" ></a>
 
 ### new DriverMixed()
 
@@ -172,7 +174,7 @@ Constructor of DriverMixed class
 
 
 
-<a class='md-heading-link' name="clay-lump-class-driver-mixed-registerDriver" ></a>
+<a class='md-heading-link' name="clay-lump-classes-driver-mixed-registerDriver" ></a>
 
 ### mixed.registerDriver(driver)
 
@@ -183,7 +185,7 @@ Register a driver
 | driver | Driver | Driver to register |
 
 
-<a class='md-heading-link' name="clay-lump-class"></a>
+<a class='md-heading-link' name="clay-lump-classes"></a>
 
 ## `MergeMixed` Class
 
@@ -192,7 +194,7 @@ Register a driver
 
 
 
-<a class='md-heading-link' name="clay-lump-class-merge-mixed-constructor" ></a>
+<a class='md-heading-link' name="clay-lump-classes-merge-mixed-constructor" ></a>
 
 ### new MergeMixed()
 
@@ -200,7 +202,7 @@ Constructor of MergeMixed class
 
 
 
-<a class='md-heading-link' name="clay-lump-class-merge-mixed-merge" ></a>
+<a class='md-heading-link' name="clay-lump-classes-merge-mixed-merge" ></a>
 
 ### mixed.merge(lump, options) -> `Promise`
 
@@ -212,7 +214,7 @@ Merge another lump
 | options | Object | Optional settings |
 
 
-<a class='md-heading-link' name="clay-lump-class-merge-mixed-mergeResource" ></a>
+<a class='md-heading-link' name="clay-lump-classes-merge-mixed-mergeResource" ></a>
 
 ### mixed.mergeResource(resource) -> `Promise`
 
@@ -223,7 +225,7 @@ Merge a resource
 | resource | ClayResource | Resource to merge |
 
 
-<a class='md-heading-link' name="clay-lump-class"></a>
+<a class='md-heading-link' name="clay-lump-classes"></a>
 
 ## `ResourceMixed` Class
 
@@ -232,7 +234,7 @@ Merge a resource
 
 
 
-<a class='md-heading-link' name="clay-lump-class-resource-mixed-constructor" ></a>
+<a class='md-heading-link' name="clay-lump-classes-resource-mixed-constructor" ></a>
 
 ### new ResourceMixed()
 
@@ -240,7 +242,7 @@ Constructor of ResourceMixed class
 
 
 
-<a class='md-heading-link' name="clay-lump-class-resource-mixed-resource" ></a>
+<a class='md-heading-link' name="clay-lump-classes-resource-mixed-resource" ></a>
 
 ### mixed.resource(resourceName, options) -> `ClayResource`
 
@@ -253,7 +255,7 @@ Get a resource with name
 | options.renew | boolean | Use no cache |
 
 
-<a class='md-heading-link' name="clay-lump-class-resource-mixed-resourceNames" ></a>
+<a class='md-heading-link' name="clay-lump-classes-resource-mixed-resourceNames" ></a>
 
 ### mixed.resourceNames() -> `Promise.<Array.<ClayResource>>`
 

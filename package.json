@@ -51,6 +51,7 @@
     "coz": "^6.0.20",
     "filecopy": "^3.0.1",
     "injectmock": "^2.0.0",
+    "markdown-toc": "^1.1.0",
     "request": "^2.81.0",
     "sg-templates": "^1.4.2",
     "sugos-travis": "^2.0.7",

@@ -53,6 +53,22 @@ Lump of clay-db
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
+
+<a name="section-doc-guides-00-t-o-c-md"></a>
+
+Table of Contents
+----------------
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [License](#license)
+- [Links](#links)
+
+
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
@@ -130,7 +146,7 @@ For more detail, see [API Guide](./doc/api/api.md)
 API
 -----
 
-+ [clay-lump@3.1.1](./doc/api/api.md)
++ [clay-lump@3.1.2](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
