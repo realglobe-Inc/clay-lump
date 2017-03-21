@@ -83,6 +83,26 @@ describe('clay-lump', function () {
 
     deepEqual(lump01.driver._storages.User[ user01.id ].org, { $ref: `Org#${org01.id}` })
   }))
+
+  it('Use policies', () => co(function * () {
+    let lump01 = new ClayLump('lump-01', {
+      policies: {
+        User: {
+          username: {
+            required: true
+          }
+        }
+      }
+    })
+    let User = lump01.resource('User')
+    let caught
+    try {
+      yield User.create({ foo: 'bar' })
+    } catch (thrown) {
+      caught = thrown
+    }
+    deepEqual(caught.detail.missing, [ 'username' ])
+  }))
 })
 
 /* global describe, before, after, it */

@@ -4,6 +4,7 @@
       "name": "ClayLump",
       "description": "",
       "extends": [
+        "PolicyMixed",
         "DriverMixed",
         "MergeMixed",
         "ResourceMixed"
@@ -71,6 +72,69 @@
           "description": "Asset lump state and throw error if something is wrong",
           "parameters": [],
           "examples": []
+        },
+        {
+          "name": "registerPolicies",
+          "access": "",
+          "virtual": false,
+          "description": "Register policies",
+          "parameters": [
+            {
+              "name": "policies",
+              "type": "Object",
+              "description": "Policies to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "registerPolicy",
+          "access": "",
+          "virtual": false,
+          "description": "Register a policy",
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "Resource name to apply policy",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "policy",
+              "type": "ClayPolicy",
+              "description": "Policies to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "getPolicy",
+          "access": "",
+          "virtual": false,
+          "description": "Get a policy",
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "Name of policy",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayPolicy",
+            "description": "- Registered policy"
+          }
         },
         {
           "name": "registerDriver",
@@ -187,7 +251,7 @@
           "parameters": [],
           "examples": [],
           "returns": {
-            "type": "Promise.<Array.<ClayResource>>",
+            "type": "Promise.<Array.<string>>",
             "description": ""
           }
         }
@@ -311,6 +375,85 @@
       ]
     },
     {
+      "name": "PolicyMixed",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "PolicyMixed",
+        "description": "",
+        "parameters": [],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "registerPolicies",
+          "access": "",
+          "virtual": false,
+          "description": "Register policies",
+          "parameters": [
+            {
+              "name": "policies",
+              "type": "Object",
+              "description": "Policies to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "registerPolicy",
+          "access": "",
+          "virtual": false,
+          "description": "Register a policy",
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "Resource name to apply policy",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "policy",
+              "type": "ClayPolicy",
+              "description": "Policies to register",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "getPolicy",
+          "access": "",
+          "virtual": false,
+          "description": "Get a policy",
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "Name of policy",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayPolicy",
+            "description": "- Registered policy"
+          }
+        }
+      ]
+    },
+    {
       "name": "ResourceMixed",
       "description": "",
       "extends": [],
@@ -372,7 +515,7 @@
           "parameters": [],
           "examples": [],
           "returns": {
-            "type": "Promise.<Array.<ClayResource>>",
+            "type": "Promise.<Array.<string>>",
             "description": ""
           }
         }
@@ -441,6 +584,27 @@
       "access": "private",
       "virtual": false,
       "description": "Mix merge support",
+      "parameters": [
+        {
+          "name": "BaseClass",
+          "type": "function",
+          "description": "Class to mix",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "function",
+        "description": "Mixed class"
+      }
+    },
+    {
+      "name": "policyMix",
+      "access": "private",
+      "virtual": false,
+      "description": "Mix policy support",
       "parameters": [
         {
           "name": "BaseClass",

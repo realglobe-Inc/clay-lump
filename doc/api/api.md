@@ -1,4 +1,4 @@
-# clay-lump@3.1.1
+# clay-lump@3.1.2
 
 Lump of clay-db
 
@@ -9,6 +9,9 @@ Lump of clay-db
   + [new ClayLump(name, options)](#clay-lump-class-clay-lump-constructor)
   + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
   + [lump.assert()](#clay-lump-class-clay-lump-assert)
+  + [lump.registerPolicies(policies)](#clay-lump-class-clay-lump-registerPolicies)
+  + [lump.registerPolicy(name, policy)](#clay-lump-class-clay-lump-registerPolicy)
+  + [lump.getPolicy(name)](#clay-lump-class-clay-lump-getPolicy)
   + [lump.registerDriver(driver)](#clay-lump-class-clay-lump-registerDriver)
   + [lump.merge(lump, options)](#clay-lump-class-clay-lump-merge)
   + [lump.mergeResource(resource)](#clay-lump-class-clay-lump-mergeResource)
@@ -21,6 +24,11 @@ Lump of clay-db
   + [new MergeMixed()](#clay-lump-class-merge-mixed-constructor)
   + [mixed.merge(lump, options)](#clay-lump-class-merge-mixed-merge)
   + [mixed.mergeResource(resource)](#clay-lump-class-merge-mixed-mergeResource)
++ [`PolicyMixed`](#clay-lump-class) Class
+  + [new PolicyMixed()](#clay-lump-class-policy-mixed-constructor)
+  + [mixed.registerPolicies(policies)](#clay-lump-class-policy-mixed-registerPolicies)
+  + [mixed.registerPolicy(name, policy)](#clay-lump-class-policy-mixed-registerPolicy)
+  + [mixed.getPolicy(name)](#clay-lump-class-policy-mixed-getPolicy)
 + [`ResourceMixed`](#clay-lump-class) Class
   + [new ResourceMixed()](#clay-lump-class-resource-mixed-constructor)
   + [mixed.resource(resourceName, options)](#clay-lump-class-resource-mixed-resource)
@@ -65,6 +73,7 @@ Local storage of Clay DB.
 
 **Extends**:
 
++ `PolicyMixed`
 + `DriverMixed`
 + `MergeMixed`
 + `ResourceMixed`
@@ -100,6 +109,40 @@ Two-way merge
 ### lump.assert()
 
 Asset lump state and throw error if something is wrong
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-registerPolicies" ></a>
+
+### lump.registerPolicies(policies)
+
+Register policies
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| policies | Object | Policies to register |
+
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-registerPolicy" ></a>
+
+### lump.registerPolicy(name, policy)
+
+Register a policy
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| name | string | Resource name to apply policy |
+| policy | ClayPolicy | Policies to register |
+
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-getPolicy" ></a>
+
+### lump.getPolicy(name) -> `ClayPolicy`
+
+Get a policy
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| name | string | Name of policy |
+
 
 <a class='md-heading-link' name="clay-lump-class-clay-lump-registerDriver" ></a>
 
@@ -150,7 +193,7 @@ Get a resource with name
 
 <a class='md-heading-link' name="clay-lump-class-clay-lump-resourceNames" ></a>
 
-### lump.resourceNames() -> `Promise.<Array.<ClayResource>>`
+### lump.resourceNames() -> `Promise.<Array.<string>>`
 
 Get all resource names
 Return all resources
@@ -225,6 +268,57 @@ Merge a resource
 
 <a class='md-heading-link' name="clay-lump-class"></a>
 
+## `PolicyMixed` Class
+
+
+
+
+
+
+<a class='md-heading-link' name="clay-lump-class-policy-mixed-constructor" ></a>
+
+### new PolicyMixed()
+
+Constructor of PolicyMixed class
+
+
+
+<a class='md-heading-link' name="clay-lump-class-policy-mixed-registerPolicies" ></a>
+
+### mixed.registerPolicies(policies)
+
+Register policies
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| policies | Object | Policies to register |
+
+
+<a class='md-heading-link' name="clay-lump-class-policy-mixed-registerPolicy" ></a>
+
+### mixed.registerPolicy(name, policy)
+
+Register a policy
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| name | string | Resource name to apply policy |
+| policy | ClayPolicy | Policies to register |
+
+
+<a class='md-heading-link' name="clay-lump-class-policy-mixed-getPolicy" ></a>
+
+### mixed.getPolicy(name) -> `ClayPolicy`
+
+Get a policy
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| name | string | Name of policy |
+
+
+<a class='md-heading-link' name="clay-lump-class"></a>
+
 ## `ResourceMixed` Class
 
 
@@ -255,7 +349,7 @@ Get a resource with name
 
 <a class='md-heading-link' name="clay-lump-class-resource-mixed-resourceNames" ></a>
 
-### mixed.resourceNames() -> `Promise.<Array.<ClayResource>>`
+### mixed.resourceNames() -> `Promise.<Array.<string>>`
 
 Get all resource names
 Return all resources
