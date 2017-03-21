@@ -1,9 +1,12 @@
 'use strict'
 
 const clayLump = require('clay-lump')
+const { SqliteDriver } = require('clay-driver-sqlite')
 
 async function exampleClayLump () {
-  let lump01 = clayLump('lump01')
+  let lump01 = clayLump('lump01', {
+    driver: new SqliteDriver('var/example-lump01.db')
+  })
 
   // Access to data sheet
   {
