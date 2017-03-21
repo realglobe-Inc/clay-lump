@@ -214,12 +214,13 @@ exampleClayLump().catch((err) => console.error(err))
 API
 -----
 
-+ [clay-lump@3.1.3](./doc/api/api.md)
++ [clay-lump@3.1.4](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-function-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
   + [DriverMixed](./doc/api/api.md#driver-mixed-class)
   + [MergeMixed](./doc/api/api.md#merge-mixed-class)
+  + [PolicyMixed](./doc/api/api.md#policy-mixed-class)
   + [ResourceMixed](./doc/api/api.md#resource-mixed-class)
 
 
