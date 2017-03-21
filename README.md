@@ -131,8 +131,8 @@ API
 -----
 
 + [clay-lump@3.1.1](./doc/api/api.md)
-  + [create](./doc/api/api.md#clay-lump-create)
-  + [isLump](./doc/api/api.md#clay-lump-is-lump)
+  + [create()](./doc/api/api.md#clay-lump-create)
+  + [isLump(instance)](./doc/api/api.md#clay-lump-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
   + [DriverMixed](./doc/api/api.md#driver-mixed-class)
   + [MergeMixed](./doc/api/api.md#merge-mixed-class)
