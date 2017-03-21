@@ -1,6 +1,6 @@
 {
   "name": "clay-lump",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "description": "Lump of clay-db",
   "main": "lib",
   "browser": "ci/browser",
@@ -52,6 +52,7 @@
     "coz": "^6.0.20",
     "filecopy": "^3.0.1",
     "injectmock": "^2.0.0",
+    "markdown-toc": "^1.1.0",
     "request": "^2.81.0",
     "sg-templates": "^1.4.4",
     "sugos-travis": "^2.0.7",
