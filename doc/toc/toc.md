@@ -2,6 +2,6 @@
 - [Usage](#usage)
 - [Advanced Usage](#advanced-usage)
   * [Applying Policies](#applying-policies)
-- [API](#api)
+- [API Guide](#api-guide)
 - [License](#license)
 - [Links](#links)

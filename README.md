@@ -64,7 +64,7 @@ Table of Contents
 - [Usage](#usage)
 - [Advanced Usage](#advanced-usage)
   * [Applying Policies](#applying-policies)
-- [API](#api)
+- [API Guide](#api-guide)
 - [License](#license)
 - [Links](#links)
 
@@ -109,7 +109,6 @@ async function exampleClayLump () {
     driver: new SqliteDriver('var/example-lump01.db')
   })
 
-  // Access to data sheet
   {
     const Dog = lump01.resource('Dog@default')
 
@@ -207,14 +206,14 @@ exampleClayLump().catch((err) => console.error(err))
 
 <!-- Section from "doc/guides/03.Advanced Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/10.API.md.hbs" Start -->
+<!-- Section from "doc/guides/10.API Guide.md.hbs" Start -->
 
-<a name="section-doc-guides-10-a-p-i-md"></a>
+<a name="section-doc-guides-10-a-p-i-guide-md"></a>
 
-API
+API Guide
 -----
 
-+ [clay-lump@3.1.4](./doc/api/api.md)
++ [clay-lump@3.1.5](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-function-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
@@ -224,7 +223,7 @@ API
   + [ResourceMixed](./doc/api/api.md#resource-mixed-class)
 
 
-<!-- Section from "doc/guides/10.API.md.hbs" End -->
+<!-- Section from "doc/guides/10.API Guide.md.hbs" End -->
 
 
 <!-- Sections Start -->

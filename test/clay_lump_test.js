@@ -89,6 +89,7 @@ describe('clay-lump', function () {
       policies: {
         User: {
           username: {
+            type: 'STRING',
             required: true
           }
         }
@@ -102,6 +103,14 @@ describe('clay-lump', function () {
       caught = thrown
     }
     deepEqual(caught.detail.missing, [ 'username' ])
+
+    let Org = lump01.resource('Org', {
+      policy: {
+        name: { type: 'STRING' }
+      }
+    })
+    let OrgAgain = lump01.resource('Org')
+    equal(Org.policy().toDigest(), OrgAgain.policy().toDigest())
   }))
 })
 

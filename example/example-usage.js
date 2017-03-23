@@ -8,7 +8,6 @@ async function exampleClayLump () {
     driver: new SqliteDriver('var/example-lump01.db')
   })
 
-  // Access to data sheet
   {
     const Dog = lump01.resource('Dog@default')
 
