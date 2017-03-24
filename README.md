@@ -64,6 +64,7 @@ Table of Contents
 - [Usage](#usage)
 - [Advanced Usage](#advanced-usage)
   * [Applying Policies](#applying-policies)
+  * [Listening to events](#listening-to-events)
 - [API Guide](#api-guide)
 - [License](#license)
 - [Links](#links)
@@ -165,8 +166,7 @@ to `policies` options of clay lump constructor.
 'use strict'
 
 const clayLump = require('clay-lump')
-const clayPolicy = require('clay-policy')
-const { STRING, DATE } = clayPolicy.Types
+const { STRING, DATE } = clayLump.Types
 
 async function exampleClayLump () {
   let lump02 = clayLump('lump02')
@@ -189,10 +189,15 @@ async function exampleClayLump () {
   // Use the resource with policy
   {
     const User = lump02.resource('User')
-    console.log(User.getPolicy()) // -> Returns policy info
-
     let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
     /* ... */
+  }
+
+  // Use policy as validator
+  {
+    const User = lump02.resource('User')
+    let policy = User.getPolicy()
+    policy.validateToThrow({ foo: 'bar' })
   }
 }
 
