@@ -1,8 +1,7 @@
 'use strict'
 
 const clayLump = require('clay-lump')
-const clayPolicy = require('clay-policy')
-const { STRING, DATE } = clayPolicy.Types
+const { STRING, DATE } = clayLump.PolicyTypes
 
 async function exampleClayLump () {
   let lump02 = clayLump('lump02')
