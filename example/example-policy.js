@@ -5,32 +5,30 @@ const clayPolicy = require('clay-policy')
 const { STRING, DATE } = clayPolicy.Types
 
 async function exampleClayLump () {
-  let lump01 = clayLump('lump02', {
-    // Restrict policies
-    policies: {
-      User: clayPolicy({
-        username: {
-          type: STRING,
-          required: true
-        },
-        birthday: {
-          type: DATE
-        },
-        rank: {
-          type: STRING,
-          oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
-        }
-      }),
-      /* ... */
+  let lump02 = clayLump('lump02')
+
+  // Define policy on resource
+  lump02.resource('User').policy({
+    username: {
+      type: STRING,
+      required: true
+    },
+    birthday: {
+      type: DATE
+    },
+    rank: {
+      type: STRING,
+      oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
     }
   })
 
-  // Access to data sheet
+  // Use the resource with policy
   {
-    const User = lump01.resource('User')
+    const User = lump02.resource('User')
     console.log(User.getPolicy()) // -> Returns policy info
 
     let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
+    /* ... */
   }
 }
 

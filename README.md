@@ -169,32 +169,81 @@ const clayPolicy = require('clay-policy')
 const { STRING, DATE } = clayPolicy.Types
 
 async function exampleClayLump () {
-  let lump01 = clayLump('lump02', {
-    // Restrict policies
-    policies: {
-      User: clayPolicy({
-        username: {
-          type: STRING,
-          required: true
-        },
-        birthday: {
-          type: DATE
-        },
-        rank: {
-          type: STRING,
-          oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
-        }
-      }),
-      /* ... */
+  let lump02 = clayLump('lump02')
+
+  // Define policy on resource
+  lump02.resource('User').policy({
+    username: {
+      type: STRING,
+      required: true
+    },
+    birthday: {
+      type: DATE
+    },
+    rank: {
+      type: STRING,
+      oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
     }
   })
 
-  // Access to data sheet
+  // Use the resource with policy
   {
-    const User = lump01.resource('User')
+    const User = lump02.resource('User')
     console.log(User.getPolicy()) // -> Returns policy info
 
     let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
+    /* ... */
+  }
+}
+
+exampleClayLump().catch((err) => console.error(err))
+
+
+```
+
+
+### Listening to events
+
+Resources are instances of [EventEmitter](https://nodejs.org/api/events.html) and fires events.
+See [ResourceEvents](https://github.com/realglobe-Inc/clay-constants#ResourceEvents) to know what you can listen.
+
+```javascript
+'use strict'
+
+const clayLump = require('clay-lump')
+const { ResourceEvents } = clayLump
+
+// Events fired from resource
+const {
+  ENTITY_CREATE,
+  ENTITY_CREATE_BULK,
+  ENTITY_UPDATE,
+  ENTITY_UPDATE_BULK,
+  ENTITY_DESTROY,
+  ENTITY_DESTROY_BULK,
+  ENTITY_DROP
+} = ResourceEvents
+
+async function exampleClayLump () {
+  let lump02 = clayLump('lump02')
+
+  // Add listener on resource
+  lump02.resource('User')
+    .on(ENTITY_CREATE, ({ created }) => { /* ... */ })
+    .on(ENTITY_CREATE_BULK, ({ created }) => { /* ... */ })
+    .on(ENTITY_UPDATE, ({ id, updated }) => { /* ... */ })
+    .on(ENTITY_UPDATE_BULK, ({ ids, updated }) => { /* ... */ })
+    .on(ENTITY_DESTROY, ({ id, destroyed }) => { /* ... */ })
+    .on(ENTITY_DESTROY_BULK, ({ ids, destroyed }) => { /* ... */ })
+    .on(ENTITY_DROP, ({ dropped }) => { /* ... */ })
+
+  // Use the resource with policy
+  {
+    const User = lump02.resource('User')
+    console.log(User.getPolicy()) // -> Returns policy info
+
+    let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
+    /* ... */
   }
 }
 
@@ -213,7 +262,7 @@ exampleClayLump().catch((err) => console.error(err))
 API Guide
 -----
 
-+ [clay-lump@3.1.5](./doc/api/api.md)
++ [clay-lump@3.1.6](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-function-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)

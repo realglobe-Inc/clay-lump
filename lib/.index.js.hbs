@@ -9,12 +9,14 @@
 const ClayLump = require('./clay_lump')
 const isLump = require('./is_lump')
 const create = require('./create')
+const constants = require('./constants')
 
 let lib = create.bind(this)
 
-Object.assign(lib, ClayLump, {
+Object.assign(lib, constants, ClayLump, {
   ClayLump,
-  isLump
+  isLump,
+  constants
 })
 
 module.exports = lib
