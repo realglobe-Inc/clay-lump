@@ -2,6 +2,7 @@
 - [Usage](#usage)
 - [Advanced Usage](#advanced-usage)
   * [Applying Policies](#applying-policies)
+  * [Listening to events](#listening-to-events)
 - [API Guide](#api-guide)
 - [License](#license)
 - [Links](#links)
