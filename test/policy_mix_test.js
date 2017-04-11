@@ -5,7 +5,8 @@
 'use strict'
 
 const policyMix = require('../lib/mixins/policy_mix.js')
-const assert = require('assert')
+
+const { ok } = require('assert')
 const co = require('co')
 
 describe('policy-mix', function () {
@@ -20,6 +21,11 @@ describe('policy-mix', function () {
   }))
 
   it('Policy mix', () => co(function * () {
+    const Mixed = policyMix(class Hoge {})
+
+    let mixed = new Mixed({})
+
+    ok(mixed)
 
   }))
 })
