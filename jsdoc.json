@@ -244,6 +244,56 @@
           }
         },
         {
+          "name": "setResource",
+          "access": "",
+          "virtual": false,
+          "description": "Set resource with name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": "string",
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "resource",
+              "type": "ClayResource",
+              "description": "Resource to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ResourceMixed",
+            "description": "Returns this"
+          }
+        },
+        {
+          "name": "getResource",
+          "access": "",
+          "virtual": false,
+          "description": "Get resource by name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": "string",
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayResource",
+            "description": "Found resource"
+          }
+        },
+        {
           "name": "resourceNames",
           "access": "",
           "virtual": false,
@@ -505,6 +555,56 @@
           "returns": {
             "type": "ClayResource",
             "description": ""
+          }
+        },
+        {
+          "name": "setResource",
+          "access": "",
+          "virtual": false,
+          "description": "Set resource with name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": "string",
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "resource",
+              "type": "ClayResource",
+              "description": "Resource to set",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ResourceMixed",
+            "description": "Returns this"
+          }
+        },
+        {
+          "name": "getResource",
+          "access": "",
+          "virtual": false,
+          "description": "Get resource by name",
+          "parameters": [
+            {
+              "name": "resourceName",
+              "type": "string",
+              "description": "Name of resource",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayResource",
+            "description": "Found resource"
           }
         },
         {

@@ -16,6 +16,8 @@ Lump of clay-db
   + [lump.merge(lump, options)](#clay-lump-class-clay-lump-merge)
   + [lump.mergeResource(resource)](#clay-lump-class-clay-lump-mergeResource)
   + [lump.resource(resourceName, options)](#clay-lump-class-clay-lump-resource)
+  + [lump.setResource(resourceName, resource)](#clay-lump-class-clay-lump-setResource)
+  + [lump.getResource(resourceName)](#clay-lump-class-clay-lump-getResource)
   + [lump.resourceNames()](#clay-lump-class-clay-lump-resourceNames)
 + [`DriverMixed`](#clay-lump-class) Class
   + [new DriverMixed()](#clay-lump-class-driver-mixed-constructor)
@@ -32,6 +34,8 @@ Lump of clay-db
 + [`ResourceMixed`](#clay-lump-class) Class
   + [new ResourceMixed()](#clay-lump-class-resource-mixed-constructor)
   + [mixed.resource(resourceName, options)](#clay-lump-class-resource-mixed-resource)
+  + [mixed.setResource(resourceName, resource)](#clay-lump-class-resource-mixed-setResource)
+  + [mixed.getResource(resourceName)](#clay-lump-class-resource-mixed-getResource)
   + [mixed.resourceNames()](#clay-lump-class-resource-mixed-resourceNames)
 
 ## Functions
@@ -191,6 +195,29 @@ Get a resource with name
 | options.renew | boolean | Use no cache |
 
 
+<a class='md-heading-link' name="clay-lump-class-clay-lump-setResource" ></a>
+
+### lump.setResource(resourceName, resource) -> `ResourceMixed`
+
+Set resource with name
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| resourceName | string | Name of resource |
+| resource | ClayResource | Resource to set |
+
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-getResource" ></a>
+
+### lump.getResource(resourceName) -> `ClayResource`
+
+Get resource by name
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| resourceName | string | Name of resource |
+
+
 <a class='md-heading-link' name="clay-lump-class-clay-lump-resourceNames" ></a>
 
 ### lump.resourceNames() -> `Promise.<Array.<string>>`
@@ -345,6 +372,29 @@ Get a resource with name
 | resourceName | string,Object | Name of resource |
 | options | Object | Optional settings |
 | options.renew | boolean | Use no cache |
+
+
+<a class='md-heading-link' name="clay-lump-class-resource-mixed-setResource" ></a>
+
+### mixed.setResource(resourceName, resource) -> `ResourceMixed`
+
+Set resource with name
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| resourceName | string | Name of resource |
+| resource | ClayResource | Resource to set |
+
+
+<a class='md-heading-link' name="clay-lump-class-resource-mixed-getResource" ></a>
+
+### mixed.getResource(resourceName) -> `ClayResource`
+
+Get resource by name
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| resourceName | string | Name of resource |
 
 
 <a class='md-heading-link' name="clay-lump-class-resource-mixed-resourceNames" ></a>
