@@ -1,4 +1,4 @@
-# clay-lump@4.1.1
+# clay-lump@4.2.0
 
 Lump of clay-db
 
