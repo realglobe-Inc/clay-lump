@@ -111,6 +111,8 @@ describe('clay-lump', function () {
     })
     let OrgAgain = lump01.resource('Org')
     equal(Org.policy().toDigest(), OrgAgain.policy().toDigest())
+
+    yield lump01.close()
   }))
 })
 

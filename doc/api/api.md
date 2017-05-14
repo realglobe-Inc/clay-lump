@@ -1,4 +1,4 @@
-# clay-lump@4.2.0
+# clay-lump@4.2.1
 
 Lump of clay-db
 
@@ -9,6 +9,7 @@ Lump of clay-db
   + [new ClayLump(name, options)](#clay-lump-class-clay-lump-constructor)
   + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
   + [lump.assert()](#clay-lump-class-clay-lump-assert)
+  + [lump.close()](#clay-lump-class-clay-lump-close)
   + [lump.registerPolicies(policies)](#clay-lump-class-clay-lump-registerPolicies)
   + [lump.registerPolicy(name, policy)](#clay-lump-class-clay-lump-registerPolicy)
   + [lump.getPolicy(name)](#clay-lump-class-clay-lump-getPolicy)
@@ -113,6 +114,12 @@ Two-way merge
 ### lump.assert()
 
 Asset lump state and throw error if something is wrong
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-close" ></a>
+
+### lump.close() -> `Promise`
+
+Close database
 
 <a class='md-heading-link' name="clay-lump-class-clay-lump-registerPolicies" ></a>
 

@@ -74,6 +74,18 @@
           "examples": []
         },
         {
+          "name": "close",
+          "access": "",
+          "virtual": false,
+          "description": "Close database",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
           "name": "registerPolicies",
           "access": "",
           "virtual": false,
