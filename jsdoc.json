@@ -74,6 +74,80 @@
           "examples": []
         },
         {
+          "name": "dump",
+          "access": "",
+          "virtual": false,
+          "description": "Dump database",
+          "parameters": [
+            {
+              "name": "dirname",
+              "type": "string",
+              "description": "Directory name to dump",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            },
+            {
+              "name": "options.force",
+              "type": "boolean",
+              "description": "Override if already exists",
+              "default": false,
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
+          "name": "restore",
+          "access": "",
+          "virtual": false,
+          "description": "Restore database",
+          "parameters": [
+            {
+              "name": "dirname",
+              "type": "string",
+              "description": "Directory name of the dump",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            },
+            {
+              "name": "options.force",
+              "type": "boolean",
+              "description": "Override existing data",
+              "default": false,
+              "optional": true,
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Promise",
+            "description": ""
+          }
+        },
+        {
           "name": "close",
           "access": "",
           "virtual": false,

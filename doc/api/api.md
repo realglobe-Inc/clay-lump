@@ -1,4 +1,4 @@
-# clay-lump@4.2.1
+# clay-lump@4.2.2
 
 Lump of clay-db
 
@@ -9,6 +9,8 @@ Lump of clay-db
   + [new ClayLump(name, options)](#clay-lump-class-clay-lump-constructor)
   + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
   + [lump.assert()](#clay-lump-class-clay-lump-assert)
+  + [lump.dump(dirname, options)](#clay-lump-class-clay-lump-dump)
+  + [lump.restore(dirname, options)](#clay-lump-class-clay-lump-restore)
   + [lump.close()](#clay-lump-class-clay-lump-close)
   + [lump.registerPolicies(policies)](#clay-lump-class-clay-lump-registerPolicies)
   + [lump.registerPolicy(name, policy)](#clay-lump-class-clay-lump-registerPolicy)
@@ -114,6 +116,32 @@ Two-way merge
 ### lump.assert()
 
 Asset lump state and throw error if something is wrong
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-dump" ></a>
+
+### lump.dump(dirname, options) -> `Promise`
+
+Dump database
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| dirname | string | Directory name to dump |
+| options | Object | Optional settings |
+| options.force | boolean | Override if already exists |
+
+
+<a class='md-heading-link' name="clay-lump-class-clay-lump-restore" ></a>
+
+### lump.restore(dirname, options) -> `Promise`
+
+Restore database
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| dirname | string | Directory name of the dump |
+| options | Object | Optional settings |
+| options.force | boolean | Override existing data |
+
 
 <a class='md-heading-link' name="clay-lump-class-clay-lump-close" ></a>
 
