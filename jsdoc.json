@@ -1,832 +1,1499 @@
 {
-  "classes": [
-    {
-      "name": "ClayLump",
-      "description": "",
-      "extends": [
-        "PolicyMixed",
-        "DriverMixed",
-        "MergeMixed",
-        "ResourceMixed"
-      ],
-      "access": "",
-      "virtual": false,
-      "fires": "",
-      "constructor": {
-        "name": "ClayLump",
-        "description": "Local storage of Clay DB.",
-        "parameters": [
-          {
-            "name": "name",
-            "type": "string",
-            "description": "Lump name",
-            "default": "",
-            "optional": "",
-            "nullable": ""
-          },
-          {
-            "name": "options",
-            "type": "Object",
-            "description": "Optional settings",
-            "default": "{}",
-            "optional": true,
-            "nullable": ""
-          },
-          {
-            "name": "options.driver",
-            "type": "Driver",
-            "description": "Clay driver instance",
-            "default": "",
-            "optional": true,
-            "nullable": ""
-          }
-        ],
-        "examples": []
-      },
-      "functions": [
+    "classes": [
         {
-          "name": "sync",
-          "access": "",
-          "virtual": false,
-          "description": "Two-way merge",
-          "parameters": [
-            {
-              "name": "lump",
-              "type": "ClayLump",
-              "description": "Lump to sync",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
-        },
-        {
-          "name": "assert",
-          "access": "",
-          "virtual": false,
-          "description": "Asset lump state and throw error if something is wrong",
-          "parameters": [],
-          "examples": []
-        },
-        {
-          "name": "dump",
-          "access": "",
-          "virtual": false,
-          "description": "Dump database",
-          "parameters": [
-            {
-              "name": "dirname",
-              "type": "string",
-              "description": "Directory name to dump",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "ClayLump",
+            "description": "",
+            "extends": [
+                "PolicyMixed",
+                "DriverMixed",
+                "MergeMixed",
+                "ResourceMixed"
+            ],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "ClayLump",
+                "description": "Local storage of Clay DB.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "description": "Lump name",
+                        "default": "",
+                        "optional": "",
+                        "nullable": ""
+                    },
+                    {
+                        "name": "options",
+                        "type": "Object",
+                        "description": "Optional settings",
+                        "default": "{}",
+                        "optional": true,
+                        "nullable": ""
+                    },
+                    {
+                        "name": "options.driver",
+                        "type": "Driver",
+                        "description": "Clay driver instance",
+                        "default": "",
+                        "optional": true,
+                        "nullable": ""
+                    }
+                ],
+                "examples": []
             },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
+            "functions": [
+                {
+                    "name": "sync",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Two-way merge",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to sync",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "assert",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Asset lump state and throw error if something is wrong",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "dump",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Dump database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name to dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override if already exists",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "restore",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Restore database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name of the dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override existing data",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "close",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Close database",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "sync",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Two-way merge",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to sync",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "assert",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Asset lump state and throw error if something is wrong",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "dump",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Dump database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name to dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override if already exists",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "restore",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Restore database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name of the dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override existing data",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "close",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Close database",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "registerPolicies",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register policies",
+                    "parameters": [
+                        {
+                            "name": "policies",
+                            "type": "Object",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "registerPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Resource name to apply policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "policy",
+                            "type": "ClayPolicy",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "getPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Name of policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayPolicy",
+                        "description": "- Registered policy"
+                    }
+                },
+                {
+                    "name": "registerDriver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a driver",
+                    "parameters": [
+                        {
+                            "name": "driver",
+                            "type": "Driver",
+                            "description": "Driver to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "merge",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge another lump",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "mergeResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge a resource",
+                    "parameters": [
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "resource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": [
+                                "string",
+                                "Object"
+                            ],
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.renew",
+                            "type": "boolean",
+                            "description": "Use no cache",
+                            "default": "",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "setResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Set resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to set",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ResourceMixed",
+                        "description": "Returns this"
+                    }
+                },
+                {
+                    "name": "getResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get resource by name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": "Found resource"
+                    }
+                },
+                {
+                    "name": "resourceNames",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get all resource names\nReturn all resources",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise.<Array.<string>>",
+                        "description": ""
+                    }
+                }
+            ],
+            "properties": [
+                {
+                    "name": "driver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Registered Driver",
+                    "type": ""
+                }
+            ]
+        },
+        {
+            "name": "ClayLump",
+            "description": "",
+            "extends": [
+                "PolicyMixed",
+                "DriverMixed",
+                "MergeMixed",
+                "ResourceMixed"
+            ],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "ClayLump",
+                "description": "Local storage of Clay DB.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "description": "Lump name",
+                        "default": "",
+                        "optional": "",
+                        "nullable": ""
+                    },
+                    {
+                        "name": "options",
+                        "type": "Object",
+                        "description": "Optional settings",
+                        "default": "{}",
+                        "optional": true,
+                        "nullable": ""
+                    },
+                    {
+                        "name": "options.driver",
+                        "type": "Driver",
+                        "description": "Clay driver instance",
+                        "default": "",
+                        "optional": true,
+                        "nullable": ""
+                    }
+                ],
+                "examples": []
             },
-            {
-              "name": "options.force",
-              "type": "boolean",
-              "description": "Override if already exists",
-              "default": false,
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
+            "functions": [
+                {
+                    "name": "sync",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Two-way merge",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to sync",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "assert",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Asset lump state and throw error if something is wrong",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "dump",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Dump database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name to dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override if already exists",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "restore",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Restore database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name of the dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override existing data",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "close",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Close database",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "sync",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Two-way merge",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to sync",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "assert",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Asset lump state and throw error if something is wrong",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "dump",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Dump database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name to dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override if already exists",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "restore",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Restore database",
+                    "parameters": [
+                        {
+                            "name": "dirname",
+                            "type": "string",
+                            "description": "Directory name of the dump",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.force",
+                            "type": "boolean",
+                            "description": "Override existing data",
+                            "default": false,
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "close",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Close database",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "registerPolicies",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register policies",
+                    "parameters": [
+                        {
+                            "name": "policies",
+                            "type": "Object",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "registerPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Resource name to apply policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "policy",
+                            "type": "ClayPolicy",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "getPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Name of policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayPolicy",
+                        "description": "- Registered policy"
+                    }
+                },
+                {
+                    "name": "registerDriver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a driver",
+                    "parameters": [
+                        {
+                            "name": "driver",
+                            "type": "Driver",
+                            "description": "Driver to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "merge",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge another lump",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "mergeResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge a resource",
+                    "parameters": [
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "resource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": [
+                                "string",
+                                "Object"
+                            ],
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.renew",
+                            "type": "boolean",
+                            "description": "Use no cache",
+                            "default": "",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "setResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Set resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to set",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ResourceMixed",
+                        "description": "Returns this"
+                    }
+                },
+                {
+                    "name": "getResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get resource by name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": "Found resource"
+                    }
+                },
+                {
+                    "name": "resourceNames",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get all resource names\nReturn all resources",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise.<Array.<string>>",
+                        "description": ""
+                    }
+                }
+            ],
+            "properties": [
+                {
+                    "name": "driver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Registered Driver",
+                    "type": ""
+                }
+            ]
         },
         {
-          "name": "restore",
-          "access": "",
-          "virtual": false,
-          "description": "Restore database",
-          "parameters": [
-            {
-              "name": "dirname",
-              "type": "string",
-              "description": "Directory name of the dump",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "DriverMixed",
+            "description": "",
+            "extends": [],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "DriverMixed",
+                "description": "",
+                "parameters": [],
+                "examples": []
             },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
+            "functions": [
+                {
+                    "name": "registerDriver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a driver",
+                    "parameters": [
+                        {
+                            "name": "driver",
+                            "type": "Driver",
+                            "description": "Driver to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                }
+            ],
+            "properties": [
+                {
+                    "name": "driver",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Registered Driver",
+                    "type": ""
+                }
+            ]
+        },
+        {
+            "name": "MergeMixed",
+            "description": "",
+            "extends": [],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "MergeMixed",
+                "description": "",
+                "parameters": [],
+                "examples": []
             },
-            {
-              "name": "options.force",
-              "type": "boolean",
-              "description": "Override existing data",
-              "default": false,
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
+            "functions": [
+                {
+                    "name": "merge",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge another lump",
+                    "parameters": [
+                        {
+                            "name": "lump",
+                            "type": "ClayLump",
+                            "description": "Lump to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "mergeResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Merge a resource",
+                    "parameters": [
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to merge",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise",
+                        "description": ""
+                    }
+                }
+            ]
         },
         {
-          "name": "close",
-          "access": "",
-          "virtual": false,
-          "description": "Close database",
-          "parameters": [],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
-        },
-        {
-          "name": "registerPolicies",
-          "access": "",
-          "virtual": false,
-          "description": "Register policies",
-          "parameters": [
-            {
-              "name": "policies",
-              "type": "Object",
-              "description": "Policies to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": []
-        },
-        {
-          "name": "registerPolicy",
-          "access": "",
-          "virtual": false,
-          "description": "Register a policy",
-          "parameters": [
-            {
-              "name": "name",
-              "type": "string",
-              "description": "Resource name to apply policy",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "PolicyMixed",
+            "description": "",
+            "extends": [],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "PolicyMixed",
+                "description": "",
+                "parameters": [],
+                "examples": []
             },
-            {
-              "name": "policy",
-              "type": "ClayPolicy",
-              "description": "Policies to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": []
+            "functions": [
+                {
+                    "name": "registerPolicies",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register policies",
+                    "parameters": [
+                        {
+                            "name": "policies",
+                            "type": "Object",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "registerPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Register a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Resource name to apply policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "policy",
+                            "type": "ClayPolicy",
+                            "description": "Policies to register",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "getPolicy",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a policy",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Name of policy",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayPolicy",
+                        "description": "- Registered policy"
+                    }
+                }
+            ]
         },
         {
-          "name": "getPolicy",
-          "access": "",
-          "virtual": false,
-          "description": "Get a policy",
-          "parameters": [
-            {
-              "name": "name",
-              "type": "string",
-              "description": "Name of policy",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayPolicy",
-            "description": "- Registered policy"
-          }
-        },
-        {
-          "name": "registerDriver",
-          "access": "",
-          "virtual": false,
-          "description": "Register a driver",
-          "parameters": [
-            {
-              "name": "driver",
-              "type": "Driver",
-              "description": "Driver to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": []
-        },
-        {
-          "name": "merge",
-          "access": "",
-          "virtual": false,
-          "description": "Merge another lump",
-          "parameters": [
-            {
-              "name": "lump",
-              "type": "ClayLump",
-              "description": "Lump to merge",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "ResourceMixed",
+            "description": "",
+            "extends": [],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "ResourceMixed",
+                "description": "",
+                "parameters": [],
+                "examples": []
             },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
-        },
-        {
-          "name": "mergeResource",
-          "access": "",
-          "virtual": false,
-          "description": "Merge a resource",
-          "parameters": [
-            {
-              "name": "resource",
-              "type": "ClayResource",
-              "description": "Resource to merge",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
-        },
-        {
-          "name": "resource",
-          "access": "",
-          "virtual": false,
-          "description": "Get a resource with name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": [
-                "string",
-                "Object"
-              ],
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
-            },
-            {
-              "name": "options.renew",
-              "type": "boolean",
-              "description": "Use no cache",
-              "default": "",
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayResource",
-            "description": ""
-          }
-        },
-        {
-          "name": "setResource",
-          "access": "",
-          "virtual": false,
-          "description": "Set resource with name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": "string",
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "resource",
-              "type": "ClayResource",
-              "description": "Resource to set",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ResourceMixed",
-            "description": "Returns this"
-          }
-        },
-        {
-          "name": "getResource",
-          "access": "",
-          "virtual": false,
-          "description": "Get resource by name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": "string",
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayResource",
-            "description": "Found resource"
-          }
-        },
-        {
-          "name": "resourceNames",
-          "access": "",
-          "virtual": false,
-          "description": "Get all resource names\nReturn all resources",
-          "parameters": [],
-          "examples": [],
-          "returns": {
-            "type": "Promise.<Array.<string>>",
-            "description": ""
-          }
+            "functions": [
+                {
+                    "name": "resource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get a resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": [
+                                "string",
+                                "Object"
+                            ],
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "description": "Optional settings",
+                            "default": "{}",
+                            "optional": true,
+                            "nullable": ""
+                        },
+                        {
+                            "name": "options.renew",
+                            "type": "boolean",
+                            "description": "Use no cache",
+                            "default": "",
+                            "optional": true,
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "setResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Set resource with name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "resource",
+                            "type": "ClayResource",
+                            "description": "Resource to set",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ResourceMixed",
+                        "description": "Returns this"
+                    }
+                },
+                {
+                    "name": "getResource",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get resource by name",
+                    "parameters": [
+                        {
+                            "name": "resourceName",
+                            "type": "string",
+                            "description": "Name of resource",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "ClayResource",
+                        "description": "Found resource"
+                    }
+                },
+                {
+                    "name": "resourceNames",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Get all resource names\nReturn all resources",
+                    "parameters": [],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise.<Array.<string>>",
+                        "description": ""
+                    }
+                }
+            ]
         }
-      ],
-      "properties": [
+    ],
+    "functions": [
         {
-          "name": "driver",
-          "access": "",
-          "virtual": false,
-          "description": "Registered Driver",
-          "type": ""
-        }
-      ]
-    },
-    {
-      "name": "DriverMixed",
-      "description": "",
-      "extends": [],
-      "access": "",
-      "virtual": false,
-      "fires": "",
-      "constructor": {
-        "name": "DriverMixed",
-        "description": "",
-        "parameters": [],
-        "examples": []
-      },
-      "functions": [
-        {
-          "name": "registerDriver",
-          "access": "",
-          "virtual": false,
-          "description": "Register a driver",
-          "parameters": [
-            {
-              "name": "driver",
-              "type": "Driver",
-              "description": "Driver to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "create",
+            "access": "",
+            "virtual": false,
+            "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
+            "parameters": [],
+            "examples": [
+                "async function tryClayLump () {\n   let lump = clayLump({\n     // Options here\n   })\n   const Product = lump.resource('Product')\n   // ... //\n }\n tryClayLump()"
+            ],
+            "returns": {
+                "type": "ClayLump",
+                "description": "- A ClayLump instance"
             }
-          ],
-          "examples": []
-        }
-      ],
-      "properties": [
-        {
-          "name": "driver",
-          "access": "",
-          "virtual": false,
-          "description": "Registered Driver",
-          "type": ""
-        }
-      ]
-    },
-    {
-      "name": "MergeMixed",
-      "description": "",
-      "extends": [],
-      "access": "",
-      "virtual": false,
-      "fires": "",
-      "constructor": {
-        "name": "MergeMixed",
-        "description": "",
-        "parameters": [],
-        "examples": []
-      },
-      "functions": [
-        {
-          "name": "merge",
-          "access": "",
-          "virtual": false,
-          "description": "Merge another lump",
-          "parameters": [
-            {
-              "name": "lump",
-              "type": "ClayLump",
-              "description": "Lump to merge",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
         },
         {
-          "name": "mergeResource",
-          "access": "",
-          "virtual": false,
-          "description": "Merge a resource",
-          "parameters": [
-            {
-              "name": "resource",
-              "type": "ClayResource",
-              "description": "Resource to merge",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "isLump",
+            "access": "",
+            "virtual": false,
+            "description": "Check if an instance is a lump",
+            "parameters": [
+                {
+                    "name": "instance",
+                    "type": "*",
+                    "description": "Instance to check",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "Boolean",
+                "description": "- Lump or not"
             }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "Promise",
-            "description": ""
-          }
-        }
-      ]
-    },
-    {
-      "name": "PolicyMixed",
-      "description": "",
-      "extends": [],
-      "access": "",
-      "virtual": false,
-      "fires": "",
-      "constructor": {
-        "name": "PolicyMixed",
-        "description": "",
-        "parameters": [],
-        "examples": []
-      },
-      "functions": [
-        {
-          "name": "registerPolicies",
-          "access": "",
-          "virtual": false,
-          "description": "Register policies",
-          "parameters": [
-            {
-              "name": "policies",
-              "type": "Object",
-              "description": "Policies to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            }
-          ],
-          "examples": []
         },
         {
-          "name": "registerPolicy",
-          "access": "",
-          "virtual": false,
-          "description": "Register a policy",
-          "parameters": [
-            {
-              "name": "name",
-              "type": "string",
-              "description": "Resource name to apply policy",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "policy",
-              "type": "ClayPolicy",
-              "description": "Policies to register",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "create",
+            "access": "",
+            "virtual": false,
+            "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
+            "parameters": [],
+            "examples": [
+                "async function tryClayLump () {\n   let lump = clayLump({\n     // Options here\n   })\n   const Product = lump.resource('Product')\n   // ... //\n }\n tryClayLump()"
+            ],
+            "returns": {
+                "type": "ClayLump",
+                "description": "- A ClayLump instance"
             }
-          ],
-          "examples": []
         },
         {
-          "name": "getPolicy",
-          "access": "",
-          "virtual": false,
-          "description": "Get a policy",
-          "parameters": [
-            {
-              "name": "name",
-              "type": "string",
-              "description": "Name of policy",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "isLump",
+            "access": "",
+            "virtual": false,
+            "description": "Check if an instance is a lump",
+            "parameters": [
+                {
+                    "name": "instance",
+                    "type": "*",
+                    "description": "Instance to check",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "Boolean",
+                "description": "- Lump or not"
             }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayPolicy",
-            "description": "- Registered policy"
-          }
-        }
-      ]
-    },
-    {
-      "name": "ResourceMixed",
-      "description": "",
-      "extends": [],
-      "access": "",
-      "virtual": false,
-      "fires": "",
-      "constructor": {
-        "name": "ResourceMixed",
-        "description": "",
-        "parameters": [],
-        "examples": []
-      },
-      "functions": [
-        {
-          "name": "resource",
-          "access": "",
-          "virtual": false,
-          "description": "Get a resource with name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": [
-                "string",
-                "Object"
-              ],
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "options",
-              "type": "Object",
-              "description": "Optional settings",
-              "default": "{}",
-              "optional": true,
-              "nullable": ""
-            },
-            {
-              "name": "options.renew",
-              "type": "boolean",
-              "description": "Use no cache",
-              "default": "",
-              "optional": true,
-              "nullable": ""
-            }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayResource",
-            "description": ""
-          }
         },
         {
-          "name": "setResource",
-          "access": "",
-          "virtual": false,
-          "description": "Set resource with name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": "string",
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
-            },
-            {
-              "name": "resource",
-              "type": "ClayResource",
-              "description": "Resource to set",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "driverMix",
+            "access": "private",
+            "virtual": false,
+            "description": "Mix driver support",
+            "parameters": [
+                {
+                    "name": "BaseClass",
+                    "type": "function",
+                    "description": "Class to mix",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "function",
+                "description": "Mixed class"
             }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ResourceMixed",
-            "description": "Returns this"
-          }
         },
         {
-          "name": "getResource",
-          "access": "",
-          "virtual": false,
-          "description": "Get resource by name",
-          "parameters": [
-            {
-              "name": "resourceName",
-              "type": "string",
-              "description": "Name of resource",
-              "default": "",
-              "optional": "",
-              "nullable": ""
+            "name": "mergeMix",
+            "access": "private",
+            "virtual": false,
+            "description": "Mix merge support",
+            "parameters": [
+                {
+                    "name": "BaseClass",
+                    "type": "function",
+                    "description": "Class to mix",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "function",
+                "description": "Mixed class"
             }
-          ],
-          "examples": [],
-          "returns": {
-            "type": "ClayResource",
-            "description": "Found resource"
-          }
         },
         {
-          "name": "resourceNames",
-          "access": "",
-          "virtual": false,
-          "description": "Get all resource names\nReturn all resources",
-          "parameters": [],
-          "examples": [],
-          "returns": {
-            "type": "Promise.<Array.<string>>",
-            "description": ""
-          }
-        }
-      ]
-    }
-  ],
-  "functions": [
-    {
-      "name": "create",
-      "access": "",
-      "virtual": false,
-      "description": "Create a lump instance. Just an alias of `new ClayLump(config)`",
-      "parameters": [],
-      "examples": [
-        "async function tryClayLump () {\n   let lump = clayLump({\n     // Options here\n   })\n   const Product = lump.resource('Product')\n   // ... //\n }\n tryClayLump()"
-      ],
-      "returns": {
-        "type": "ClayLump",
-        "description": "- A ClayLump instance"
-      }
-    },
-    {
-      "name": "isLump",
-      "access": "",
-      "virtual": false,
-      "description": "Check if an instance is a lump",
-      "parameters": [
+            "name": "policyMix",
+            "access": "private",
+            "virtual": false,
+            "description": "Mix policy support",
+            "parameters": [
+                {
+                    "name": "BaseClass",
+                    "type": "function",
+                    "description": "Class to mix",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "function",
+                "description": "Mixed class"
+            }
+        },
         {
-          "name": "instance",
-          "type": "*",
-          "description": "Instance to check",
-          "default": "",
-          "optional": "",
-          "nullable": ""
+            "name": "resourceMix",
+            "access": "private",
+            "virtual": false,
+            "description": "Mix resource support",
+            "parameters": [
+                {
+                    "name": "BaseClass",
+                    "type": "function",
+                    "description": "Class to mix",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "function",
+                "description": "Mixed class"
+            }
         }
-      ],
-      "examples": [],
-      "returns": {
-        "type": "Boolean",
-        "description": "- Lump or not"
-      }
-    },
-    {
-      "name": "driverMix",
-      "access": "private",
-      "virtual": false,
-      "description": "Mix driver support",
-      "parameters": [
-        {
-          "name": "BaseClass",
-          "type": "function",
-          "description": "Class to mix",
-          "default": "",
-          "optional": "",
-          "nullable": ""
-        }
-      ],
-      "examples": [],
-      "returns": {
-        "type": "function",
-        "description": "Mixed class"
-      }
-    },
-    {
-      "name": "mergeMix",
-      "access": "private",
-      "virtual": false,
-      "description": "Mix merge support",
-      "parameters": [
-        {
-          "name": "BaseClass",
-          "type": "function",
-          "description": "Class to mix",
-          "default": "",
-          "optional": "",
-          "nullable": ""
-        }
-      ],
-      "examples": [],
-      "returns": {
-        "type": "function",
-        "description": "Mixed class"
-      }
-    },
-    {
-      "name": "policyMix",
-      "access": "private",
-      "virtual": false,
-      "description": "Mix policy support",
-      "parameters": [
-        {
-          "name": "BaseClass",
-          "type": "function",
-          "description": "Class to mix",
-          "default": "",
-          "optional": "",
-          "nullable": ""
-        }
-      ],
-      "examples": [],
-      "returns": {
-        "type": "function",
-        "description": "Mixed class"
-      }
-    },
-    {
-      "name": "resourceMix",
-      "access": "private",
-      "virtual": false,
-      "description": "Mix resource support",
-      "parameters": [
-        {
-          "name": "BaseClass",
-          "type": "function",
-          "description": "Class to mix",
-          "default": "",
-          "optional": "",
-          "nullable": ""
-        }
-      ],
-      "examples": [],
-      "returns": {
-        "type": "function",
-        "description": "Mixed class"
-      }
-    }
-  ]
+    ]
 }

@@ -29,12 +29,12 @@
     "asobj": "^1.5.0",
     "clay-constants": "^3.0.1",
     "clay-crypto": "^4.0.1",
-    "clay-driver-base": "^3.0.1",
-    "clay-driver-memory": "^4.0.1",
+    "clay-driver-base": "^3.1.2",
+    "clay-driver-memory": "^4.0.5",
     "clay-entity": "^2.0.1",
-    "clay-policy": "^2.0.1",
-    "clay-resource": "^3.0.1",
-    "clay-resource-name": "^4.0.1",
+    "clay-policy": "^2.0.16",
+    "clay-resource": "^3.1.18",
+    "clay-resource-name": "^4.0.2",
     "co": "^4.6.0",
     "debug": "^2.6.3"
   },
@@ -56,6 +56,7 @@
     "request": "^2.81.0",
     "sg-templates": "^1.4.4",
     "sugos-travis": "^2.0.7",
+    "the-script-jsdoc": "^1.0.8",
     "writeout": "^2.1.0"
   },
   "engines": {
