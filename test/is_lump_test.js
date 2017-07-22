@@ -6,24 +6,23 @@
 
 const isLump = require('../lib/is_lump.js')
 const ClayLump = require('../lib/clay_lump')
-const { ok } = require('assert')
-const co = require('co')
+const {ok} = require('assert')
 
 describe('is-lump', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Is lump', () => co(function * () {
+  it('Is lump', async () => {
     ok(isLump(new ClayLump('Ultra Fruit')))
-    ok(isLump({ $$lump: true }))
-  }))
+    ok(isLump({$$lump: true}))
+  })
 })
 
 /* global describe, before, after, it */

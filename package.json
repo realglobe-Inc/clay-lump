@@ -29,13 +29,12 @@
     "asobj": "^1.5.0",
     "clay-constants": "^3.0.1",
     "clay-crypto": "^4.0.1",
-    "clay-driver-base": "^3.1.2",
+    "clay-driver-base": "^3.1.3",
     "clay-driver-memory": "^4.0.5",
     "clay-entity": "^2.0.1",
     "clay-policy": "^2.0.16",
-    "clay-resource": "^3.1.18",
+    "clay-resource": "^3.1.19",
     "clay-resource-name": "^4.0.2",
-    "co": "^4.6.0",
     "debug": "^2.6.3"
   },
   "devDependencies": {
@@ -60,7 +59,7 @@
     "writeout": "^2.1.0"
   },
   "engines": {
-    "node": ">=6",
+    "node": ">=7.6",
     "npm": ">=4"
   }
 }

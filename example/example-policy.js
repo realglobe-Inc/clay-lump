@@ -1,7 +1,7 @@
 'use strict'
 
 const clayLump = require('clay-lump')
-const { STRING, DATE } = clayLump.Types
+const {STRING, DATE} = clayLump.Types
 
 async function exampleClayLump () {
   let lump02 = clayLump('lump02')
@@ -17,14 +17,14 @@ async function exampleClayLump () {
     },
     rank: {
       type: STRING,
-      oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+      oneOf: ['GOLD', 'SLIVER', 'BRONZE']
     }
   })
 
   // Use the resource with policy
   {
     const User = lump02.resource('User')
-    let user01 = await User.create({ username: 'foo', rank: '__INVALID_RANK__' }) // -> Throws policy error
+    let user01 = await User.create({username: 'foo', rank: '__INVALID_RANK__'}) // -> Throws policy error
     /* ... */
   }
 
@@ -32,9 +32,8 @@ async function exampleClayLump () {
   {
     const User = lump02.resource('User')
     let policy = User.getPolicy()
-    policy.validateToThrow({ foo: 'bar' })
+    policy.validateToThrow({foo: 'bar'})
   }
 }
 
 exampleClayLump().catch((err) => console.error(err))
-

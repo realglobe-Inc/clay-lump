@@ -6,21 +6,20 @@
 
 const resourceMix = require('../lib/mixins/resource_mix.js')
 const clayResource = require('clay-resource')
-const { ok } = require('assert')
-const co = require('co')
+const {ok} = require('assert')
 
 describe('resource-mix', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Resource mix', () => co(function * () {
+  it('Resource mix', async () => {
     const Mixed = resourceMix(class {})
     ok(Mixed)
     let mixed = new Mixed({})
@@ -28,7 +27,7 @@ describe('resource-mix', function () {
     mixed.setResource('foo', fooResource)
     let found = mixed.getResource('foo')
     ok(found)
-  }))
+  })
 })
 
 /* global describe, before, after, it */

@@ -5,24 +5,23 @@
 'use strict'
 
 const create = require('../lib/create.js')
-const { ok } = require('assert')
-const co = require('co')
+const {ok} = require('assert')
 
 describe('create', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Create', () => co(function * () {
+  it('Create', async () => {
     ok(create('foo'))
-    ok(create({ name: 'foo' }))
-  }))
+    ok(create({name: 'foo'}))
+  })
 })
 
 /* global describe, before, after, it */

@@ -5,24 +5,23 @@
 'use strict'
 
 const driveMix = require('../lib/mixins/drive_mix.js')
-const { ok } = require('assert')
-const co = require('co')
+const {ok} = require('assert')
 
 describe('drive-mix', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Drive mix', () => co(function * () {
+  it('Drive mix', async () => {
     const mixed = driveMix(class {})
     ok(mixed)
-  }))
+  })
 })
 
 /* global describe, before, after, it */

@@ -5,24 +5,23 @@
 'use strict'
 
 const mergeMix = require('../lib/mixins/merge_mix.js')
-const { ok } = require('assert')
-const co = require('co')
+const {ok} = require('assert')
 
 describe('merge-mix', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Merge mix', () => co(function * () {
+  it('Merge mix', async () => {
     const mixed = mergeMix(class {})
     ok(mixed)
-  }))
+  })
 })
 
 /* global describe, before, after, it */
