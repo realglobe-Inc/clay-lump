@@ -33,7 +33,7 @@
     "clay-driver-memory": "^4.1.1",
     "clay-entity": "^2.1.2",
     "clay-policy": "^2.1.1",
-    "clay-resource": "^4.1.2",
+    "clay-resource": "^4.1.3",
     "clay-resource-name": "^4.0.2",
     "debug": "^3.0.0"
   },
@@ -44,7 +44,7 @@
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^5.0.20",
+    "ape-tmpl": "^6.0.0",
     "ape-updating": "^4.1.0",
     "asleep": "^1.0.3",
     "claydb-assets": "^2.0.3",
