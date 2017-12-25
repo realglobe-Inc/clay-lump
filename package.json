@@ -30,7 +30,7 @@
     "clay-constants": "^3.4.4",
     "clay-crypto": "^4.0.1",
     "clay-driver-base": "^4.0.1",
-    "clay-driver-memory": "^4.1.5",
+    "clay-driver-memory": "^4.1.6",
     "clay-entity": "^2.1.3",
     "clay-policy": "^2.1.4",
     "clay-resource": "^5.4.12",
