@@ -25,12 +25,15 @@ describe('clay-lump', function () {
     let Toys = lump.resource('Toys')
     ok(Toys)
 
-    let foo = await Toys.create({
-      name: 'foo',
+    const toy01 = await Toys.create({
+      name: 'toy01',
       date: new Date()
     })
-    ok(foo.id)
-    equal(foo.name, 'foo')
+    ok(toy01.id)
+    equal(toy01.name, 'toy01')
+
+    const resolved = await lump.resolveEntityRef(toy01.toRef())
+    equal(resolved.name, 'toy01')
   })
 
   it('Merge lumps', async () => {
