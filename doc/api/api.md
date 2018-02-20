@@ -1,4 +1,4 @@
-# clay-lump@4.2.29
+# clay-lump@4.4.0
 
 Lump of clay-db
 
@@ -39,6 +39,9 @@ Lump of clay-db
   + [mixed.registerPolicies(policies)](#clay-lump-class-policy-mixed-registerPolicies)
   + [mixed.registerPolicy(name, policy)](#clay-lump-class-policy-mixed-registerPolicy)
   + [mixed.getPolicy(name)](#clay-lump-class-policy-mixed-getPolicy)
++ [`RefMixed`](#clay-lump-class) Class
+  + [new RefMixed()](#clay-lump-class-ref-mixed-constructor)
+  + [mixed.resolveEntityRef(ref)](#clay-lump-class-ref-mixed-resolveEntityRef)
 + [`ResourceMixed`](#clay-lump-class) Class
   + [new ResourceMixed()](#clay-lump-class-resource-mixed-constructor)
   + [mixed.resource(resourceName, options)](#clay-lump-class-resource-mixed-resource)
@@ -431,6 +434,34 @@ Get a policy
 | Param | Type | Description |
 | ----- | --- | -------- |
 | name | string | Name of policy |
+
+
+<a class='md-heading-link' name="clay-lump-class"></a>
+
+## `RefMixed` Class
+
+
+
+
+
+
+<a class='md-heading-link' name="clay-lump-class-ref-mixed-constructor" ></a>
+
+### new RefMixed()
+
+Constructor of RefMixed class
+
+
+
+<a class='md-heading-link' name="clay-lump-class-ref-mixed-resolveEntityRef" ></a>
+
+### mixed.resolveEntityRef(ref) -> `Promise.<Entity>`
+
+Resolve ref string
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| ref | string | Ref string (eg. "User#1") |
 
 
 <a class='md-heading-link' name="clay-lump-class"></a>

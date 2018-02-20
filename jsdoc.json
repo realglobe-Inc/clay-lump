@@ -1222,6 +1222,43 @@
             ]
         },
         {
+            "name": "RefMixed",
+            "description": "",
+            "extends": [],
+            "access": "",
+            "virtual": false,
+            "fires": "",
+            "constructor": {
+                "name": "RefMixed",
+                "description": "",
+                "parameters": [],
+                "examples": []
+            },
+            "functions": [
+                {
+                    "name": "resolveEntityRef",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Resolve ref string",
+                    "parameters": [
+                        {
+                            "name": "ref",
+                            "type": "string",
+                            "description": "Ref string (eg. \"User#1\")",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": [],
+                    "returns": {
+                        "type": "Promise.<Entity>",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        {
             "name": "ResourceMixed",
             "description": "",
             "extends": [],
@@ -1458,6 +1495,27 @@
             "access": "private",
             "virtual": false,
             "description": "Mix policy support",
+            "parameters": [
+                {
+                    "name": "BaseClass",
+                    "type": "function",
+                    "description": "Class to mix",
+                    "default": "",
+                    "optional": "",
+                    "nullable": ""
+                }
+            ],
+            "examples": [],
+            "returns": {
+                "type": "function",
+                "description": "Mixed class"
+            }
+        },
+        {
+            "name": "refMix",
+            "access": "private",
+            "virtual": false,
+            "description": "Ref support",
             "parameters": [
                 {
                     "name": "BaseClass",
