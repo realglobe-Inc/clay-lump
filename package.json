@@ -28,7 +28,7 @@
     "aslogger": "^2.0.0",
     "asobj": "^2.0.10",
     "clay-constants": "^3.4.4",
-    "clay-crypto": "^4.0.1",
+    "clay-crypto": "^4.0.2",
     "clay-driver-base": "^4.0.1",
     "clay-driver-memory": "^4.1.9",
     "clay-entity": "^2.1.4",
@@ -39,7 +39,7 @@
     "debug": "^3.1.0"
   },
   "devDependencies": {
-    "ababel": "^4.0.6",
+    "ababel": "^4.0.7",
     "amocha": "^5.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
@@ -49,7 +49,7 @@
     "asleep": "^1.0.3",
     "clay-driver-sqlite": "^6.3.12",
     "claydb-assets": "^2.0.3",
-    "coz": "^6.0.20",
+    "coz": "^7.0.1",
     "filecopy": "^4.0.1",
     "injectmock": "^2.0.0",
     "markdown-toc": "^1.2.0",
