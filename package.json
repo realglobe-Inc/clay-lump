@@ -35,7 +35,7 @@
     "clay-policy": "^2.1.7",
     "clay-resource": "^5.5.9",
     "clay-resource-name": "^4.0.4",
-    "clay-resource-ref": "^2.0.3",
+    "clay-resource-ref": "^2.0.4",
     "debug": "^3.1.0"
   },
   "devDependencies": {
