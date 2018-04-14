@@ -1,4 +1,4 @@
-# clay-lump@4.4.1
+# clay-lump@4.4.2
 
 Lump of clay-db
 
@@ -7,11 +7,6 @@ Lump of clay-db
   + [isLump(instance)](#clay-lump-function-is-lump)
 + [`ClayLump`](#clay-lump-class) Class
   + [new ClayLump(name, options)](#clay-lump-class-clay-lump-constructor)
-  + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
-  + [lump.assert()](#clay-lump-class-clay-lump-assert)
-  + [lump.dump(dirname, options)](#clay-lump-class-clay-lump-dump)
-  + [lump.restore(dirname, options)](#clay-lump-class-clay-lump-restore)
-  + [lump.close()](#clay-lump-class-clay-lump-close)
   + [lump.sync(lump)](#clay-lump-class-clay-lump-sync)
   + [lump.assert()](#clay-lump-class-clay-lump-assert)
   + [lump.dump(dirname, options)](#clay-lump-class-clay-lump-dump)
@@ -107,55 +102,6 @@ Constructor of ClayLump class
 | options | Object | Optional settings |
 | options.driver | Driver | Clay driver instance |
 
-
-<a class='md-heading-link' name="clay-lump-class-clay-lump-sync" ></a>
-
-### lump.sync(lump) -> `Promise`
-
-Two-way merge
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| lump | ClayLump | Lump to sync |
-
-
-<a class='md-heading-link' name="clay-lump-class-clay-lump-assert" ></a>
-
-### lump.assert()
-
-Asset lump state and throw error if something is wrong
-
-<a class='md-heading-link' name="clay-lump-class-clay-lump-dump" ></a>
-
-### lump.dump(dirname, options) -> `Promise`
-
-Dump database
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| dirname | string | Directory name to dump |
-| options | Object | Optional settings |
-| options.force | boolean | Override if already exists |
-
-
-<a class='md-heading-link' name="clay-lump-class-clay-lump-restore" ></a>
-
-### lump.restore(dirname, options) -> `Promise`
-
-Restore database
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| dirname | string | Directory name of the dump |
-| options | Object | Optional settings |
-| options.force | boolean | Override existing data |
-
-
-<a class='md-heading-link' name="clay-lump-class-clay-lump-close" ></a>
-
-### lump.close() -> `Promise`
-
-Close database
 
 <a class='md-heading-link' name="clay-lump-class-clay-lump-sync" ></a>
 
