@@ -265,7 +265,7 @@ exampleClayLump().catch((err) => console.error(err))
 API Guide
 -----
 
-+ [clay-lump@4.4.4](./doc/api/api.md)
++ [clay-lump@4.4.5](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-function-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
