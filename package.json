@@ -30,10 +30,10 @@
     "clay-constants": "^3.4.4",
     "clay-crypto": "^4.0.3",
     "clay-driver-base": "^4.1.5",
-    "clay-driver-memory": "^4.1.12",
-    "clay-entity": "^2.1.9",
+    "clay-driver-memory": "^4.1.13",
+    "clay-entity": "^2.1.10",
     "clay-policy": "^2.1.9",
-    "clay-resource": "^5.5.27",
+    "clay-resource": "^5.5.29",
     "clay-resource-name": "^4.0.5",
     "clay-resource-ref": "^2.0.7",
     "debug": "^4.1.0"
