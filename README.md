@@ -55,7 +55,7 @@ Lump of clay-db
 
 <!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
 
-<a name="section-doc-guides-00-t-o-c-md"></a>
+<a name="section-doc-guides-00-toc-md"></a>
 
 Table of Contents
 ----------------
@@ -260,12 +260,12 @@ exampleClayLump().catch((err) => console.error(err))
 
 <!-- Section from "doc/guides/10.API Guide.md.hbs" Start -->
 
-<a name="section-doc-guides-10-a-p-i-guide-md"></a>
+<a name="section-doc-guides-10-api-guide-md"></a>
 
 API Guide
 -----
 
-+ [clay-lump@4.4.19](./doc/api/api.md)
++ [clay-lump@4.4.20](./doc/api/api.md)
   + [create()](./doc/api/api.md#clay-lump-function-create)
   + [isLump(instance)](./doc/api/api.md#clay-lump-function-is-lump)
   + [ClayLump](./doc/api/api.md#clay-lump-class)
