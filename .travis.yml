@@ -2,18 +2,18 @@ language: node_js
 node_js:
 - '8'
 before_install:
-- npm i npm-cli-login -g
-- npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-- npm who
+- echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+- npm install jsdoc publish-if-needed npm@latest -g
 install:
 - npm install jsdoc -g
 - npm install
 script:
-- ./ci/build.js
-- ./ci/shim.js
-- ./ci/test.js
-- ./ci/doc.js
+- "./ci/build.js"
+- "./ci/shim.js"
+- "./ci/test.js"
+- "./ci/doc.js"
 after_success:
-- ./ci/travis/publish.js
+- publish-if-needed
 env:
-  secure: "0jyqBuy2bAcu39xFwOUJjY7iwmG0wTgwYaLfP1LbF/Jd8hRtaZUyoFS/XjJ6zhrmA35aKCs7QI4stNPvAgb0YoqeTXcxcKJ/Kx75YSb/4q7l7w6kXbAC+UgebZINxGI/vV8f5nTFPzQSNklRuuTfMmaUkeFylJpZvbCMXd8GbF1P72vS2v8svBTNsfJExtGzl25LEE4PVN6LUbIMqe/e+6y1UtuuOnEIdxNFjZaANiAcMV0aVwmO3FDiD1AbhNvoB/RJw+BOZSBBb3KAoI+KKruWXg4f0J8ybcFjo3FHPOSlRfmikTkQGWvBLz8eH361Zt/JWZnIosLHBT+4HDgRdF+QDyRuf+fLOZqSSarMzrWz37klrgkemy2hPvKt1vNfH0/5zff9A8qcNqo+xI8gCV8X579pMkLiXWS9mPnEcth3CJJrLQ15DR10kpfjPt3Y2HOB0lgP+QcFA6fujSvxneeiGzAJDYw2mXo8uhtL7YNAKxo/2ns02ked/d5eYS5I+KcZZHyBFJpt8zsgzj/A0PCkhidYNcG4NKItFJ+vAbiDJFX2twh3Nm2chBMpV+5BPEz/M2c7EheSYby8ORUJPgYqWBg0NzShcivg8bGg9LfTdbbSDLzzAeOzLFYB0H6VPWyn+uYgHU/r3qkumIv5r7NaSh4QdRDt5U1txRfjT5w="
+  global:
+    secure: NSvDw+zo1nVfvze7W9WQbh7C5CUexr3S1gtttPKcKusSdIDd7M4qvzJHZe28njIdnrDPjRZQkv/1DIXwTr90qDHDzmaqdtORJud2X9+y1Cw3gl9/3YNuADdjJSqbvx7Y3wop+hpaKPMQwvnpbMvuK6emkw9xmCybmR86V5aAoyaqdvfXzFEr+1YxUcCBSxUZzE0i4mYx3OsmRTAPaxblOiB8RO8F8rX+gTvSpiggW0IBUO+ifnG2EHjRwMtJ6A1RtNPHZWKyCvvN5P5pE7V4HMpRK07Mhaf7Pf4SONASvm4NleoRkQiOdZW+z4TTHbubhGo9SaRTpuybTl0QFFeVXmqC3rUdqtgcFsoux1u5ds2Tb2hhqRvhVDzdLGaAEwXqZExDANqWVKCy/lLGGSSsehi3zeRO37m1FL7IP2yB6IpnYuQxGzjMge03i4KZS2A2G5msw5DB9qVhbvz3cEomYAzpcbXeLAcg54BU/pzWjNgweas51vXPJ5dfBRKRbz8PgucVDKZ+mbtmjVKRBhZoeKtbbHoEHpX63E8jekaqx5XYs96wSKSseSy9ohzg3E33tOrB9lhgRDkm3apySwfooIdHQv9evRk+VNcmDPhb0moJfQXG0wsCOYgLIi8hpZsjsUa60yI1BJrnkTB7FIvff3RuGIic38zKVnQarz+3nrA=
