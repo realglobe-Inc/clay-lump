@@ -1,6 +1,6 @@
 {
   "name": "clay-lump",
-  "version": "4.4.28",
+  "version": "4.4.29",
   "description": "Lump of clay-db",
   "main": "lib",
   "browser": "ci/browser",
@@ -29,7 +29,7 @@
     "asobj": "^3.0.1",
     "clay-constants": "^3.4.4",
     "clay-crypto": "^4.0.4",
-    "clay-driver-base": "^4.1.7",
+    "clay-driver-base": "^4.1.8",
     "clay-driver-memory": "^4.1.19",
     "clay-entity": "^2.1.10",
     "clay-policy": "^2.1.13",
@@ -39,25 +39,24 @@
     "debug": "^4.1.1"
   },
   "devDependencies": {
-    "ababel": "^6.0.0",
-    "amocha": "^6.0.0",
+    "ababel": "^6.1.3",
+    "amocha": "^7.0.2",
     "ape-formatting": "^2.0.2",
-    "ape-releasing": "^5.0.7",
     "ape-tasking": "^4.0.12",
     "ape-tmpl": "^6.0.14",
     "ape-updating": "^5.0.3",
     "asleep": "^1.0.3",
     "clay-driver-sqlite": "^6.3.25",
     "claydb-assets": "^2.0.3",
-    "coz": "^7.0.19",
-    "filecopy": "^4.0.2",
+    "coz": "^7.2.0",
+    "filecopy": "^4.1.0",
     "injectmock": "^2.0.0",
     "markdown-toc": "^1.2.0",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "sg-templates": "^1.4.4",
     "sugos-travis": "^2.0.7",
     "the-script-jsdoc": "^2.0.4",
-    "writeout": "^2.2.4"
+    "writeout": "^2.3.2"
   },
   "engines": {
     "node": ">=7.6",
