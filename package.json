@@ -1,6 +1,6 @@
 {
   "name": "clay-lump",
-  "version": "4.4.30",
+  "version": "4.4.31",
   "description": "Lump of clay-db",
   "main": "lib",
   "browser": "ci/browser",
@@ -33,7 +33,7 @@
     "clay-driver-memory": "^4.1.19",
     "clay-entity": "^2.1.10",
     "clay-policy": "^2.1.13",
-    "clay-resource": "^5.7.2",
+    "clay-resource": "^5.7.5",
     "clay-resource-name": "^4.0.5",
     "clay-resource-ref": "^2.0.8",
     "debug": "^4.1.1"
